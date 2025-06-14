@@ -1,0 +1,15 @@
+{
+  "name": "passion-detailing",
+  "version": "1.0.0",
+  "description": "Professional car and bike detailing services website",
+  "scripts": {
+    "build": "tailwindcss -i ./css/styles.css -o ./css/output.css --watch"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35"
+  }
+} 
