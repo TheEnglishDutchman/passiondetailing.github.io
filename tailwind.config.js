@@ -7,8 +7,12 @@ module.exports = {
     extend: {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
+        'ubuntu': ['Ubuntu', 'sans-serif'],
       },
       colors: {
+        primary: '#000000',    // true black
+        secondary: '#000000',  // true black
+        accent: '#000000',     // true black
         'primary': {
           50: '#f0f9ff',
           100: '#e0f2fe',
