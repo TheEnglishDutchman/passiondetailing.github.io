@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 User-agent: *
 Allow: /
 Sitemap: https://passiondetailing.github.io/sitemap.xml
+=======
+User-agent: *
+Allow: /
+Sitemap: https://passiondetailing.github.io/sitemap.xml 
+>>>>>>> 23a090eca7df89a753e041893d74d704c62599f1
