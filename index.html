@@ -35,6 +35,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            line-height: 1.5;
         }
         html {
             scroll-behavior: smooth;
@@ -45,13 +46,13 @@
             letter-spacing: 0.3px;
         }
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
         @media (min-width: 768px) {
             .container {
-                padding: 0 2rem;
+                padding: 0 1.5rem;
             }
         }
         .mobile-menu {
@@ -59,6 +60,51 @@
         }
         .mobile-menu.hidden {
             display: none;
+        }
+        /* More compact sections */
+        section {
+            padding: 4rem 0;
+        }
+        /* Improved visual hierarchy */
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+        /* More impactful hero section */
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        /* Compact cards */
+        .feature-card {
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        /* Streamlined navigation */
+        nav {
+            height: 4rem;
+        }
+        .nav-link {
+            padding: 0.5rem 1rem;
+        }
+        /* More compact service items */
+        .service-item {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        /* Improved button styling */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
         }
     </style>
     <!-- Mobile Menu JavaScript -->
@@ -91,11 +137,11 @@
     <!-- Navigation -->
     <nav class="fixed w-full bg-[#F2F2F2] shadow-md z-50">
         <div class="container">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-16">
                 <a href="/" class="flex items-center">
                     <span class="text-xl font-bold text-[#000000] tracking-widest">PassionDetailing</span>
                 </a>
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden md:flex space-x-6">
                     <a href="#home" class="ubuntu-nav text-[#1A1A1A] hover:text-[#000000] transition">Home</a>
                     <a href="#services" class="ubuntu-nav text-[#1A1A1A] hover:text-[#000000] transition">Services</a>
                     <a href="#about" class="ubuntu-nav text-[#1A1A1A] hover:text-[#000000] transition">About</a>
@@ -120,49 +166,49 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 md:pt-40 bg-[#000000] text-[#F2F2F2] min-h-screen flex items-center">
-        <div class="container py-20">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+    <section id="home" class="pt-24 md:pt-32 bg-[#000000] text-[#F2F2F2] min-h-[90vh] flex items-center">
+        <div class="container py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
                 <!-- Hero Content -->
                 <div class="w-full md:w-1/2 text-center md:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Professional Car & Bike Detailing</h1>
-                    <p class="text-lg md:text-xl mb-8">Experience showroom-quality detailing services at your doorstep. We bring the expertise to you.</p>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Professional Car & Bike Detailing</h1>
+                    <p class="text-lg mb-6">Experience showroom-quality detailing services at your doorstep.</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="#contact" class="bg-[#F2F2F2] text-[#000000] px-8 py-4 rounded-lg font-semibold hover:bg-[#1A1A1A] hover:text-[#F2F2F2] transition duration-300">
+                        <a href="#contact" class="btn bg-[#F2F2F2] text-[#000000] px-8 py-3 rounded-lg font-semibold hover:bg-[#1A1A1A] hover:text-[#F2F2F2]">
                             Book Now
                         </a>
-                        <a href="#services" class="border-2 border-[#F2F2F2] text-[#F2F2F2] px-8 py-4 rounded-lg font-semibold hover:bg-[#F2F2F2] hover:text-[#000000] transition duration-300">
+                        <a href="#services" class="btn border-2 border-[#F2F2F2] text-[#F2F2F2] px-8 py-3 rounded-lg font-semibold hover:bg-[#F2F2F2] hover:text-[#000000]">
                             Our Services
                         </a>
                     </div>
                 </div>
                 <!-- Hero Logo -->
                 <div class="w-full md:w-1/2">
-                    <img src="images/main logo.png" alt="PassionDetailing Logo" class="w-full h-auto object-contain" style="max-height: 500px;">
+                    <img src="images/main logo.png" alt="PassionDetailing Logo" class="w-full h-auto object-contain" style="max-height: 400px;">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="py-20 bg-[#F2F2F2]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center text-[#1A1A1A]">Why Choose Us</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <i class="fas fa-truck text-4xl text-[#1A1A1A] mb-6"></i>
-                    <h2 class="text-xl font-bold mb-4 text-[#1A1A1A]">Mobile Service</h2>
-                    <p class="text-[#1A1A1A]">We come to your home or office, bringing our professional equipment and expertise right to your doorstep.</p>
+    <section class="py-16 bg-[#F2F2F2]">
+        <div class="container">
+            <h2 class="section-title text-center text-[#1A1A1A]">Why Choose Us</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="feature-card bg-white rounded-xl shadow-lg">
+                    <i class="fas fa-truck text-3xl text-[#1A1A1A] mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 text-[#1A1A1A]">Mobile Service</h3>
+                    <p class="text-[#1A1A1A]">We bring professional equipment and expertise right to your doorstep.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <i class="fas fa-search text-4xl text-[#1A1A1A] mb-6"></i>
-                    <h2 class="text-xl font-bold mb-4 text-[#1A1A1A]">Attention to Detail</h2>
-                    <p class="text-[#1A1A1A]">Every inch of your vehicle receives our meticulous care, ensuring a showroom-quality finish.</p>
+                <div class="feature-card bg-white rounded-xl shadow-lg">
+                    <i class="fas fa-search text-3xl text-[#1A1A1A] mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 text-[#1A1A1A]">Attention to Detail</h3>
+                    <p class="text-[#1A1A1A]">Every inch receives our meticulous care for a showroom-quality finish.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <i class="fas fa-medal text-4xl text-[#1A1A1A] mb-6"></i>
-                    <h2 class="text-xl font-bold mb-4 text-[#1A1A1A]">Trusted Experience</h2>
-                    <p class="text-[#1A1A1A]">Over 3 years of delivering top-tier detailing services with customer satisfaction guaranteed.</p>
+                <div class="feature-card bg-white rounded-xl shadow-lg">
+                    <i class="fas fa-medal text-3xl text-[#1A1A1A] mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 text-[#1A1A1A]">Trusted Experience</h3>
+                    <p class="text-[#1A1A1A]">Over 3 years of delivering top-tier detailing services.</p>
                 </div>
             </div>
         </div>
