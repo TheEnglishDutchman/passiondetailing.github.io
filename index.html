@@ -39,6 +39,11 @@
         html {
             scroll-behavior: smooth;
         }
+        .ubuntu-nav {
+            font-size: 8px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
     </style>
     <!-- Mobile Menu JavaScript -->
     <script>
@@ -54,8 +59,8 @@
 </head>
 <body class="font-poppins">
     <!-- Special Offer Banner -->
-    <div class="bg-[#000000] text-[#F2F2F2] py-2 text-center">
-        <p class="text-lg font-semibold">
+    <div class="bg-[#000000] text-[#F2F2F2] py-1 text-center">
+        <p class="text-sm font-semibold">
             <i class="fas fa-gift mr-2"></i>Special Offer: 10% off your first detailing service!
         </p>
     </div>
@@ -65,14 +70,14 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <a href="/" class="flex items-center">
-                    <span class="text-4xl font-bold text-[#000000] tracking-widest">PassionDetailing</span>
+                    <span class="text-xl font-bold text-[#000000] tracking-widest">PassionDetailing</span>
                 </a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-[#1A1A1A] hover:text-[#000000] transition">Home</a>
-                    <a href="#services" class="text-[#1A1A1A] hover:text-[#000000] transition">Services</a>
-                    <a href="#about" class="text-[#1A1A1A] hover:text-[#000000] transition">About</a>
-                    <a href="#gallery" class="text-[#1A1A1A] hover:text-[#000000] transition">Gallery</a>
-                    <a href="#contact" class="text-[#1A1A1A] hover:text-[#000000] transition">Contact</a>
+                    <a href="#home" class="ubuntu-nav text-[#1A1A1A] hover:text-[#000000] transition">Home</a>
+                    <a href="#services" class="ubuntu-nav text-[#1A1A1A] hover:text-[#000000] transition">Services</a>
+                    <a href="#about" class="ubuntu-nav text-[#1A1A1A] hover:text-[#000000] transition">About</a>
+                    <a href="#gallery" class="ubuntu-nav text-[#1A1A1A] hover:text-[#000000] transition">Gallery</a>
+                    <a href="#contact" class="ubuntu-nav text-[#1A1A1A] hover:text-[#000000] transition">Contact</a>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden">
                     <i class="fas fa-bars text-2xl text-[#1A1A1A]"></i>
@@ -82,11 +87,11 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#F2F2F2]">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-[#1A1A1A] hover:text-[#000000]">Home</a>
-                <a href="#services" class="block px-3 py-2 text-[#1A1A1A] hover:text-[#000000]">Services</a>
-                <a href="#about" class="block px-3 py-2 text-[#1A1A1A] hover:text-[#000000]">About</a>
-                <a href="#gallery" class="block px-3 py-2 text-[#1A1A1A] hover:text-[#000000]">Gallery</a>
-                <a href="#contact" class="block px-3 py-2 text-[#1A1A1A] hover:text-[#000000]">Contact</a>
+                <a href="#home" class="block px-3 py-2 ubuntu-nav text-[#1A1A1A] hover:text-[#000000]">Home</a>
+                <a href="#services" class="block px-3 py-2 ubuntu-nav text-[#1A1A1A] hover:text-[#000000]">Services</a>
+                <a href="#about" class="block px-3 py-2 ubuntu-nav text-[#1A1A1A] hover:text-[#000000]">About</a>
+                <a href="#gallery" class="block px-3 py-2 ubuntu-nav text-[#1A1A1A] hover:text-[#000000]">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 ubuntu-nav text-[#1A1A1A] hover:text-[#000000]">Contact</a>
             </div>
         </div>
     </nav>
@@ -130,7 +135,7 @@
     <section id="about" class="py-16 bg-[#1A1A1A]">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center text-[#F2F2F2]">About Us</h2>
+                <h2 class="text-2xl font-bold mb-8 text-center text-[#F2F2F2]">About Us</h2>
                 <div class="bg-[#000000] p-8 rounded-lg shadow-lg">
                     <p class="mb-4 text-[#F2F2F2]">At PassionDetailing, we specialize in premium car and motorcycle detailing. Whether it's a family sedan or a collector's bike, we treat every vehicle with care and precision.</p>
                     <p class="text-[#F2F2F2]">With over 3 years of experience, we bring professional-grade results right to your location. Our team of certified detailers uses only the finest products and techniques to ensure your vehicle looks its absolute best.</p>
@@ -142,19 +147,19 @@
     <!-- Services Section -->
     <section id="services" class="py-16 bg-[#F2F2F2]">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center text-[#1A1A1A]">Our Services</h2>
+            <h2 class="text-2xl font-bold mb-12 text-center text-[#1A1A1A]">Our Services</h2>
             
             <!-- Special Offer Card -->
             <div class="max-w-2xl mx-auto mb-16 bg-[#000000] rounded-xl p-8 text-[#F2F2F2] shadow-lg">
                 <div class="flex items-center justify-between">
                     <div>
-                        <h3 class="text-2xl font-bold mb-2">First Time Customer?</h3>
-                        <p class="text-lg mb-4">Get 10% off your first detailing service!</p>
+                        <h3 class="text-xl font-bold mb-2">First Time Customer?</h3>
+                        <p class="text-base mb-4">Get 10% off your first detailing service!</p>
                         <a href="#contact" class="inline-block bg-[#F2F2F2] text-[#000000] px-6 py-3 rounded-lg font-semibold hover:bg-[#1A1A1A] hover:text-[#F2F2F2] transition duration-300">
                             Book Now
                         </a>
                     </div>
-                    <div class="text-5xl font-bold">
+                    <div class="text-4xl font-bold">
                         10% OFF
                     </div>
                 </div>
@@ -162,115 +167,115 @@
             
             <!-- Interior Detailing -->
             <div class="mb-16">
-                <h3 class="text-2xl font-bold mb-8 text-center text-[#1A1A1A]">
+                <h3 class="text-xl font-bold mb-8 text-center text-[#1A1A1A]">
                     <i class="fas fa-car-side mr-2"></i>Interior Detailing
                 </h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-broom text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Vacuuming & Shampooing</h4>
-                        <p class="text-[#F2F2F2]">Deep cleaning of carpets, floor mats, seats, and upholstery to remove dirt, debris, and stains for a refreshed cabin.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Vacuuming & Shampooing</h4>
+                        <p class="text-sm text-[#F2F2F2]">Deep cleaning of carpets, floor mats, seats, and upholstery to remove dirt, debris, and stains for a refreshed cabin.</p>
                     </div>
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-hot-tub text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Steam Cleaning</h4>
-                        <p class="text-[#F2F2F2]">Sanitizes and lifts tough grime from fabric and hard-to-reach areas using high-temperature steam.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Steam Cleaning</h4>
+                        <p class="text-sm text-[#F2F2F2]">Sanitizes and lifts tough grime from fabric and hard-to-reach areas using high-temperature steam.</p>
                     </div>
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-couch text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Leather Cleaning & Conditioning</h4>
-                        <p class="text-[#F2F2F2]">Gently cleans leather surfaces and applies conditioner to restore suppleness, prevent cracking, and enhance appearance.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Leather Cleaning & Conditioning</h4>
+                        <p class="text-sm text-[#F2F2F2]">Gently cleans leather surfaces and applies conditioner to restore suppleness, prevent cracking, and enhance appearance.</p>
                     </div>
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-tachometer-alt text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Dashboard & Console Detailing</h4>
-                        <p class="text-[#F2F2F2]">Careful cleaning and treatment of all interior plastics, vinyl, and trims to remove dust, smudges, and fingerprints.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Dashboard & Console Detailing</h4>
+                        <p class="text-sm text-[#F2F2F2]">Careful cleaning and treatment of all interior plastics, vinyl, and trims to remove dust, smudges, and fingerprints.</p>
                     </div>
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-window-maximize text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Window Cleaning (Interior)</h4>
-                        <p class="text-[#F2F2F2]">Crystal-clear finish on all inside glass surfaces using streak-free products.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Window Cleaning (Interior)</h4>
+                        <p class="text-sm text-[#F2F2F2]">Crystal-clear finish on all inside glass surfaces using streak-free products.</p>
                     </div>
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-wind text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Odor Removal</h4>
-                        <p class="text-[#F2F2F2]">Neutralizes persistent smells (smoke, pets, mildew) using professional-grade deodorizing treatments.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Odor Removal</h4>
+                        <p class="text-sm text-[#F2F2F2]">Neutralizes persistent smells (smoke, pets, mildew) using professional-grade deodorizing treatments.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Exterior Detailing -->
             <div class="mb-16">
-                <h3 class="text-2xl font-bold mb-8 text-center text-[#1A1A1A]">
-                    <i class="fas fa-car text-3xl mr-2"></i>Exterior Detailing
+                <h3 class="text-xl font-bold mb-8 text-center text-[#1A1A1A]">
+                    <i class="fas fa-car text-2xl mr-2"></i>Exterior Detailing
                 </h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-hand-sparkles text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Hand Wash & Dry</h4>
-                        <p class="text-[#F2F2F2]">Gentle yet thorough cleaning using pH-balanced soap and microfiber mitts to prevent scratches.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Hand Wash & Dry</h4>
+                        <p class="text-sm text-[#F2F2F2]">Gentle yet thorough cleaning using pH-balanced soap and microfiber mitts to prevent scratches.</p>
                     </div>
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-spray-can text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Waxing & Polishing</h4>
-                        <p class="text-[#F2F2F2]">Applies high-quality wax or polish to enhance shine and provide a protective barrier against the elements.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Waxing & Polishing</h4>
+                        <p class="text-sm text-[#F2F2F2]">Applies high-quality wax or polish to enhance shine and provide a protective barrier against the elements.</p>
                     </div>
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-magic text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Paint Correction</h4>
-                        <p class="text-[#F2F2F2]">Removes surface imperfections like swirl marks, light scratches, and oxidation to restore true paint depth and clarity.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Paint Correction</h4>
+                        <p class="text-sm text-[#F2F2F2]">Removes surface imperfections like swirl marks, light scratches, and oxidation to restore true paint depth and clarity.</p>
                     </div>
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-sliders-h text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Clay Bar Treatment</h4>
-                        <p class="text-[#F2F2F2]">Removes bonded contaminants from paint (e.g., tar, tree sap, industrial fallout) for a smooth, glass-like surface.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Clay Bar Treatment</h4>
+                        <p class="text-sm text-[#F2F2F2]">Removes bonded contaminants from paint (e.g., tar, tree sap, industrial fallout) for a smooth, glass-like surface.</p>
                     </div>
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-circle-notch text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Tire & Wheel Cleaning/Dressing</h4>
-                        <p class="text-[#F2F2F2]">Deep cleaning of wheels and tires, followed by a tire shine that adds a rich, black finish.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Tire & Wheel Cleaning/Dressing</h4>
+                        <p class="text-sm text-[#F2F2F2]">Deep cleaning of wheels and tires, followed by a tire shine that adds a rich, black finish.</p>
                     </div>
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-gem text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Trim & Chrome Polishing</h4>
-                        <p class="text-[#F2F2F2]">Cleans and protects all trim pieces and chrome accents, restoring original luster.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Trim & Chrome Polishing</h4>
+                        <p class="text-sm text-[#F2F2F2]">Cleans and protects all trim pieces and chrome accents, restoring original luster.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Protective Services -->
             <div>
-                <h3 class="text-2xl font-bold mb-8 text-center text-[#1A1A1A]">
-                    <i class="fas fa-shield-alt text-3xl mr-2"></i>Protective Services
+                <h3 class="text-xl font-bold mb-8 text-center text-[#1A1A1A]">
+                    <i class="fas fa-shield-alt text-2xl mr-2"></i>Protective Services
                 </h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                         <i class="fas fa-sun text-3xl text-[#F2F2F2] mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Wax Protection</h4>
-                        <p class="text-[#F2F2F2]">Applies a durable wax layer that enhances shine and shields your paint from UV rays, rain, and road grime.</p>
+                        <h4 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Wax Protection</h4>
+                        <p class="text-sm text-[#F2F2F2]">Applies a durable wax layer that enhances shine and shields your paint from UV rays, rain, and road grime.</p>
                     </div>
                 </div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                     <i class="fas fa-car text-3xl text-[#F2F2F2] mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Interior Detailing</h3>
-                    <p class="text-[#F2F2F2]">Deep cleaning of seats, carpets, dashboard, and all interior surfaces.</p>
+                    <h3 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Interior Detailing</h3>
+                    <p class="text-sm text-[#F2F2F2]">Deep cleaning of seats, carpets, dashboard, and all interior surfaces.</p>
                 </div>
                 <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                     <i class="fas fa-spray-can text-3xl text-[#F2F2F2] mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Exterior Detailing</h3>
-                    <p class="text-[#F2F2F2]">Hand wash, polish, and wax for a glossy, protective finish.</p>
+                    <h3 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Exterior Detailing</h3>
+                    <p class="text-sm text-[#F2F2F2]">Hand wash, polish, and wax for a glossy, protective finish.</p>
                 </div>
                 <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                     <i class="fas fa-motorcycle text-3xl text-[#F2F2F2] mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Bike Detailing</h3>
-                    <p class="text-[#F2F2F2]">Precision detailing for motorcycles with attention to paint, chrome, and wheels.</p>
+                    <h3 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Bike Detailing</h3>
+                    <p class="text-sm text-[#F2F2F2]">Precision detailing for motorcycles with attention to paint, chrome, and wheels.</p>
                 </div>
                 <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition duration-300">
                     <i class="fas fa-map-marker-alt text-3xl text-[#F2F2F2] mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-[#F2F2F2]">Mobile Appointments</h3>
-                    <p class="text-[#F2F2F2]">We bring all equipment to you — home or work.</p>
+                    <h3 class="text-lg font-semibold mb-2 text-[#F2F2F2]">Mobile Appointments</h3>
+                    <p class="text-sm text-[#F2F2F2]">We bring all equipment to you — home or work.</p>
                 </div>
             </div>
         </div>
@@ -279,7 +284,7 @@
     <!-- Gallery Section -->
     <section id="gallery" class="py-16 bg-[#1A1A1A]">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center text-[#F2F2F2]">Our Work</h2>
+            <h2 class="text-2xl font-bold mb-12 text-center text-[#F2F2F2]">Our Work</h2>
             <div class="grid md:grid-cols-3 gap-4">
                 <!-- Add your gallery images here -->
                 <div class="relative group overflow-hidden rounded-lg">
@@ -296,12 +301,12 @@
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-[#1A1A1A]">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center text-[#F2F2F2]">Contact Us</h2>
+            <h2 class="text-2xl font-bold mb-12 text-center text-[#F2F2F2]">Contact Us</h2>
             <div class="max-w-2xl mx-auto">
                 <div class="bg-[#000000] p-8 rounded-lg shadow-lg">
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
-                            <h3 class="text-xl font-semibold mb-4 text-[#F2F2F2]">Get in Touch</h3>
+                            <h3 class="text-lg font-semibold mb-4 text-[#F2F2F2]">Get in Touch</h3>
                             <div class="space-y-4">
                                 <p class="flex items-center">
                                     <i class="fas fa-phone-alt w-6 text-[#F2F2F2]"></i>
@@ -322,7 +327,7 @@
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold mb-4 text-[#F2F2F2]">Business Hours</h3>
+                            <h3 class="text-lg font-semibold mb-4 text-[#F2F2F2]">Business Hours</h3>
                             <div class="space-y-2">
                                 <p class="text-[#F2F2F2]">Monday - Friday: 9:00 AM - 5:00 PM</p>
                                 <p class="text-[#F2F2F2]">Saturday: By Appointment</p>
@@ -340,11 +345,11 @@
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">PassionDetailing</h3>
-                    <p class="text-[#F2F2F2]">Professional mobile detailing services for cars and bikes.</p>
+                    <h3 class="text-lg font-bold mb-4">PassionDetailing</h3>
+                    <p class="text-sm text-[#F2F2F2]">Professional mobile detailing services for cars and bikes.</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="#home" class="text-[#F2F2F2] hover:text-[#1A1A1A] transition">Home</a></li>
                         <li><a href="#services" class="text-[#F2F2F2] hover:text-[#1A1A1A] transition">Services</a></li>
@@ -353,7 +358,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
                     <ul class="space-y-2 text-[#F2F2F2]">
                         <li><i class="fas fa-phone-alt mr-2"></i>06 1234 5678</li>
                         <li><i class="fas fa-envelope mr-2"></i>info@passiondetailing.com</li>
