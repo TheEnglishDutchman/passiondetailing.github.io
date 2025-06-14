@@ -40,6 +40,17 @@
             scroll-behavior: smooth;
         }
     </style>
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
 </head>
 <body class="font-poppins">
     <!-- Special Offer Banner -->
@@ -293,19 +304,41 @@
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-8 text-gray-900">Contact Us</h2>
-                <p class="text-lg mb-6">Ready to book or have questions?</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="tel:0612345678" class="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition duration-300">
-                        <i class="fas fa-phone-alt mr-2"></i>Call: 06 1234 5678
-                    </a>
-                    <a href="https://wa.me/31612345678" class="bg-gray-700 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-600 transition duration-300">
-                        <i class="fab fa-whatsapp mr-2"></i>WhatsApp
-                    </a>
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Contact Us</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+                            <div class="space-y-4">
+                                <p class="flex items-center">
+                                    <i class="fas fa-phone-alt w-6 text-gray-900"></i>
+                                    <a href="tel:0612345678" class="text-gray-700 hover:text-black">06 1234 5678</a>
+                                </p>
+                                <p class="flex items-center">
+                                    <i class="fab fa-whatsapp w-6 text-gray-900"></i>
+                                    <a href="https://wa.me/31612345678" class="text-gray-700 hover:text-black">WhatsApp</a>
+                                </p>
+                                <p class="flex items-center">
+                                    <i class="fas fa-envelope w-6 text-gray-900"></i>
+                                    <a href="mailto:info@passiondetailing.com" class="text-gray-700 hover:text-black">info@passiondetailing.com</a>
+                                </p>
+                                <p class="flex items-center">
+                                    <i class="fas fa-map-marker-alt w-6 text-gray-900"></i>
+                                    <span class="text-gray-700">Voorthuizen (10km radius)</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Business Hours</h3>
+                            <div class="space-y-2">
+                                <p class="text-gray-700">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                                <p class="text-gray-700">Saturday: By Appointment</p>
+                                <p class="text-gray-700">Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="mt-6 text-gray-600"><i class="far fa-clock mr-2"></i>Business Hours: 9:00 AM - 5:00 PM</p>
-                <p class="mt-2 text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i>Service Area: Voorthuizen and surrounding areas within 10km</p>
             </div>
         </div>
     </section>
