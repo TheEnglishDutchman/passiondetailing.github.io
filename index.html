@@ -18,9 +18,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#000000',    // gray-900
-                        secondary: '#000000',  // gray-800
-                        accent: '#000000',     // gray-700
+                        primary: '#FF4D4D',
+                        secondary: '#2D2D2D',
+                        accent: '#FFD700',
+                        dark: '#1A1A1A',
+                        light: '#F5F5F5'
                     },
                     fontFamily: {
                         'made-tommy': ['"Made Tommy Soft"', 'sans-serif'],
@@ -48,103 +50,50 @@
             box-sizing: border-box;
         }
         body {
-            background-color: #000000;
-            color: #BBBBBB;
+            background-color: #1A1A1A;
+            color: #F5F5F5;
             line-height: 1.6;
         }
         .hero-section {
             min-height: 100vh;
-            background-color: #000000;
-            position: relative;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg');
+            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            display: flex;
-            align-items: center;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #CD212A 0%, #FF4D4D 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .section-bg {
-            background-color: #000000;
             position: relative;
-            padding: 5rem 0;
+            overflow: hidden;
         }
-        .section-bg::before {
+        .hero-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(205, 33, 42, 0.3), transparent);
-        }
-        .card-bg {
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        .card-bg:hover {
-            transform: translateY(-5px);
-            border-color: rgba(205, 33, 42, 0.3);
-            box-shadow: 0 10px 30px rgba(205, 33, 42, 0.1);
-        }
-        .glass-effect {
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 77, 77, 0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
         .nav-bg {
-            background-color: rgba(0, 0, 0, 0.95);
+            background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            height: 4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .mobile-menu {
-            background-color: rgba(0, 0, 0, 0.98);
+        .card {
+            background: rgba(45, 45, 45, 0.5);
             backdrop-filter: blur(10px);
-        }
-        .footer-bg {
-            background-color: #000000;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 3rem 0;
-        }
-        .hover-lift {
-            transition: transform 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-        }
-        .input-bg {
-            background-color: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            padding: 0.75rem 1rem;
-            width: 100%;
-            border-radius: 0.375rem;
         }
-        .input-bg:focus {
-            border-color: rgba(205, 33, 42, 0.5);
-            box-shadow: 0 0 0 2px rgba(205, 33, 42, 0.15);
-            background-color: rgba(0, 0, 0, 0.7);
-            outline: none;
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 77, 77, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.1);
         }
         .btn-primary {
-            background: linear-gradient(135deg, #CD212A 0%, #FF4D4D 100%);
+            background: linear-gradient(135deg, #FF4D4D 0%, #FF6B6B 100%);
             transition: all 0.3s ease;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.375rem;
-            font-weight: 500;
             position: relative;
             overflow: hidden;
-            display: inline-block;
-            text-align: center;
         }
         .btn-primary::before {
             content: '';
@@ -161,63 +110,39 @@
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(205, 33, 42, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
         }
         .btn-secondary {
             background: rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-            text-align: center;
-        }
-        .btn-secondary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: 0.5s;
-        }
-        .btn-secondary:hover::before {
-            left: 100%;
         }
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
         }
         .service-icon {
-            width: 4rem;
-            height: 4rem;
-            background: linear-gradient(135deg, rgba(205, 33, 42, 0.1) 0%, rgba(255, 77, 77, 0.1) 100%);
-            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(255, 77, 77, 0.1) 0%, rgba(255, 77, 77, 0.2) 100%);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
             transition: all 0.3s ease;
         }
         .service-icon i {
-            font-size: 1.5rem;
-            color: #CD212A;
+            font-size: 2rem;
+            color: #FF4D4D;
             transition: all 0.3s ease;
         }
-        .card-bg:hover .service-icon {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, rgba(205, 33, 42, 0.2) 0%, rgba(255, 77, 77, 0.2) 100%);
-        }
-        .card-bg:hover .service-icon i {
-            transform: scale(1.1);
+        .card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, rgba(255, 77, 77, 0.2) 0%, rgba(255, 77, 77, 0.3) 100%);
         }
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 0.5rem;
+            border-radius: 15px;
             aspect-ratio: 16/9;
         }
         .gallery-item img {
@@ -227,7 +152,7 @@
             transition: all 0.5s ease;
         }
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         .gallery-item::after {
             content: '';
@@ -236,7 +161,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.8), transparent);
             opacity: 0;
             transition: all 0.3s ease;
         }
@@ -245,20 +170,29 @@
         }
         .price-card {
             transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
-        .price-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(205, 33, 42, 0.3);
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF4D4D, #FFD700);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .price-card:hover::before {
+            opacity: 1;
         }
         .price-card.popular {
-            border: 2px solid rgba(205, 33, 42, 0.3);
+            border: 2px solid #FF4D4D;
             transform: scale(1.05);
         }
-        .price-card.popular:hover {
-            transform: scale(1.05) translateY(-10px);
+        .price-card.popular::before {
+            opacity: 1;
         }
         .contact-info-item {
             transition: all 0.3s ease;
@@ -267,61 +201,51 @@
             gap: 1rem;
         }
         .contact-info-item:hover {
-            transform: translateX(5px);
+            transform: translateX(10px);
         }
         .contact-info-item i {
-            transition: all 0.3s ease;
-            font-size: 1.25rem;
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 77, 77, 0.1);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(205, 33, 42, 0.1);
-            border-radius: 50%;
+            font-size: 1.5rem;
+            color: #FF4D4D;
+            transition: all 0.3s ease;
         }
         .contact-info-item:hover i {
-            color: #CD212A;
-            background: rgba(205, 33, 42, 0.2);
+            background: rgba(255, 77, 77, 0.2);
+            transform: rotate(10deg);
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+        .input-field {
+            background: rgba(45, 45, 45, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 12px;
+        }
+        .input-field:focus {
+            border-color: #FF4D4D;
+            box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.2);
+            background: rgba(45, 45, 45, 0.7);
+            outline: none;
         }
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
+            position: relative;
+            display: inline-block;
             margin-bottom: 3rem;
-            text-align: center;
         }
-        .section-subtitle {
-            font-size: 1.25rem;
-            color: #888888;
-            margin-bottom: 4rem;
-            text-align: center;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .grid {
-            display: grid;
-            gap: 2rem;
-        }
-        @media (min-width: 640px) {
-            .grid-cols-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (min-width: 768px) {
-            .grid-cols-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        @media (min-width: 1024px) {
-            .grid-cols-4 {
-                grid-template-columns: repeat(4, 1fr);
-            }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #FF4D4D, #FFD700);
+            border-radius: 2px;
         }
         .animate-fade-in {
             animation: fadeIn 1s ease-out forwards;
@@ -340,95 +264,80 @@
     </style>
     <!-- Mobile Menu JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
+        const mobileMenuButton = document.querySelector('button');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'fixed inset-0 z-40 hidden bg-dark bg-opacity-95';
+        mobileMenu.innerHTML = `
+            <div class="flex justify-end p-6">
+                <button class="text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center space-y-8 p-6">
+                <a href="#services" class="text-gray-300 hover:text-white text-xl">Services</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white text-xl">Gallery</a>
+                <a href="#pricing" class="text-gray-300 hover:text-white text-xl">Pricing</a>
+                <a href="#contact" class="text-gray-300 hover:text-white text-xl">Contact</a>
+            </div>
+        `;
+        document.body.appendChild(mobileMenu);
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-                    mobileMenu.classList.add('hidden');
-                }
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const closeButton = mobileMenu.querySelector('button');
+        closeButton.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         });
     </script>
 </head>
-<body class="text-[#BBBBBB]">
+<body>
     <!-- Navigation -->
     <nav class="fixed w-full z-50 nav-bg">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <!-- Left Navigation -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="#services" class="text-gray-300 hover:text-white transition-colors">SERVICES</a>
-                    <a href="#gallery" class="text-gray-300 hover:text-white transition-colors">GALLERY</a>
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="text-2xl font-bold text-white">
+                    <span class="text-primary">Passion</span>Detailing
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-white transition-colors">Gallery</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
                 </div>
-                
-                <!-- Center Logo -->
-                <div class="flex-1 text-center">
-                    <a href="#" class="text-2xl font-bold text-white hover:text-red-600 transition-colors">PassionDetailing</a>
-                </div>
-                
-                <!-- Right Navigation -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">PRICING</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors">CONTACT</a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobileMenuButton" class="text-gray-300 hover:text-white focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+                <button class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed inset-0 z-40 hidden">
-        <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
-        <div class="absolute inset-y-0 right-0 w-64 bg-black bg-opacity-95 p-6">
-            <div class="flex justify-end">
-                <button id="closeMobileMenu" class="text-gray-300 hover:text-white focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            <div class="mt-8 space-y-4">
-                <a href="#services" class="block text-gray-300 hover:text-white transition-colors">SERVICES</a>
-                <a href="#gallery" class="block text-gray-300 hover:text-white transition-colors">GALLERY</a>
-                <a href="#pricing" class="block text-gray-300 hover:text-white transition-colors">PRICING</a>
-                <a href="#contact" class="block text-gray-300 hover:text-white transition-colors">CONTACT</a>
-            </div>
-        </div>
-    </div>
-
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container mx-auto px-4 relative z-10">
+    <section class="hero-section flex items-center">
+        <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
                 <div class="mb-8 animate-fade-in" style="animation-delay: 0.2s;">
-                    <img src="images/main logo.png" alt="Passion Detailing Logo" class="w-96 h-96 mx-auto hover-lift">
+                    <img src="images/main logo.png" alt="Passion Detailing Logo" class="w-96 h-96 mx-auto">
                 </div>
-                <h1 class="text-5xl md:text-6xl font-bold text-[#CCCCCC] mb-6 tracking-tight animate-fade-in" style="animation-delay: 0.4s;">
-                    Premium <span class="gradient-text">Automotive Care</span>
+                <h1 class="text-6xl md:text-7xl font-bold mb-6 animate-fade-in" style="animation-delay: 0.4s;">
+                    Premium <span class="text-primary">Automotive Care</span>
                 </h1>
-                <p class="text-xl text-[#BBBBBB] mb-8 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.6s;">
+                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.6s;">
                     Experience the pinnacle of automotive detailing with our expert services. We bring out the true beauty of your vehicle.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style="animation-delay: 0.8s;">
-                    <a href="#contact" class="btn-primary text-white">
+                <div class="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style="animation-delay: 0.8s;">
+                    <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-xl text-lg font-semibold">
                         Book Now
                     </a>
-                    <a href="#services" class="btn-secondary text-white">
+                    <a href="#services" class="btn-secondary text-white px-8 py-4 rounded-xl text-lg font-semibold">
                         Our Services
                     </a>
                 </div>
@@ -437,87 +346,86 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Comprehensive detailing solutions for your vehicle's every need</p>
+    <section id="services" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Exterior Detailing -->
-                <div class="card-bg p-8 rounded-lg">
-                    <div class="service-icon">
+                <div class="card p-8 rounded-2xl">
+                    <div class="service-icon mx-auto mb-6">
                         <i class="fas fa-car"></i>
                     </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">Exterior Detailing</h3>
-                    <p class="text-[#BBBBBB] mb-6">Complete exterior cleaning, paint correction, and protection services to make your vehicle shine.</p>
-                    <ul class="space-y-2 text-[#BBBBBB]">
+                    <h3 class="text-2xl font-semibold text-center mb-4">Exterior Detailing</h3>
+                    <p class="text-gray-300 mb-6 text-center">Complete exterior cleaning, paint correction, and protection services to make your vehicle shine.</p>
+                    <ul class="space-y-3">
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Hand wash and dry
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Clay bar treatment
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Paint correction
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Ceramic coating
                         </li>
                     </ul>
                 </div>
 
                 <!-- Interior Detailing -->
-                <div class="card-bg p-8 rounded-lg">
-                    <div class="service-icon">
+                <div class="card p-8 rounded-2xl">
+                    <div class="service-icon mx-auto mb-6">
                         <i class="fas fa-couch"></i>
                     </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">Interior Detailing</h3>
-                    <p class="text-[#BBBBBB] mb-6">Thorough interior cleaning and sanitization to restore your vehicle's cabin to its pristine condition.</p>
-                    <ul class="space-y-2 text-[#BBBBBB]">
+                    <h3 class="text-2xl font-semibold text-center mb-4">Interior Detailing</h3>
+                    <p class="text-gray-300 mb-6 text-center">Thorough interior cleaning and sanitization to restore your vehicle's cabin to its pristine condition.</p>
+                    <ul class="space-y-3">
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Vacuum and steam cleaning
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Leather treatment
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Carpet shampooing
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Odor elimination
                         </li>
                     </ul>
                 </div>
 
                 <!-- Paint Protection -->
-                <div class="card-bg p-8 rounded-lg">
-                    <div class="service-icon">
+                <div class="card p-8 rounded-2xl">
+                    <div class="service-icon mx-auto mb-6">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">Paint Protection</h3>
-                    <p class="text-[#BBBBBB] mb-6">Advanced protection solutions to keep your vehicle's paint looking new for years to come.</p>
-                    <ul class="space-y-2 text-[#BBBBBB]">
+                    <h3 class="text-2xl font-semibold text-center mb-4">Paint Protection</h3>
+                    <p class="text-gray-300 mb-6 text-center">Advanced protection solutions to keep your vehicle's paint looking new for years to come.</p>
+                    <ul class="space-y-3">
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Ceramic coating
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Paint sealant
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             PPF installation
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Maintenance plans
                         </li>
                     </ul>
@@ -527,97 +435,94 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="section-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">Our Pricing</h2>
-            <p class="section-subtitle">Transparent pricing for premium detailing services</p>
+    <section id="pricing" class="py-24 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Pricing</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Basic Package -->
-                <div class="card-bg p-8 rounded-lg price-card">
-                    <h3 class="text-2xl font-semibold text-white mb-4">Basic</h3>
-                    <div class="text-4xl font-bold text-white mb-6">$149</div>
+                <div class="card p-8 rounded-2xl price-card">
+                    <h3 class="text-2xl font-semibold mb-4">Basic</h3>
+                    <div class="text-4xl font-bold mb-6">$149</div>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Exterior hand wash
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Interior vacuum
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Window cleaning
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Tire dressing
                         </li>
                     </ul>
-                    <a href="#contact" class="btn-secondary text-white w-full">Book Now</a>
+                    <a href="#contact" class="btn-secondary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
                 </div>
 
                 <!-- Premium Package -->
-                <div class="card-bg p-8 rounded-lg price-card popular">
-                    <div class="absolute top-0 right-0 bg-red-600 text-white px-4 py-1 rounded-bl-lg">Popular</div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">Premium</h3>
-                    <div class="text-4xl font-bold text-white mb-6">$299</div>
+                <div class="card p-8 rounded-2xl price-card popular">
+                    <div class="absolute top-0 right-0 bg-primary text-white px-4 py-2 rounded-bl-xl">Popular</div>
+                    <h3 class="text-2xl font-semibold mb-4">Premium</h3>
+                    <div class="text-4xl font-bold mb-6">$299</div>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Everything in Basic
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Clay bar treatment
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Paint correction
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Ceramic coating
                         </li>
                     </ul>
-                    <a href="#contact" class="btn-primary text-white w-full">Book Now</a>
+                    <a href="#contact" class="btn-primary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
                 </div>
 
                 <!-- Ultimate Package -->
-                <div class="card-bg p-8 rounded-lg price-card">
-                    <h3 class="text-2xl font-semibold text-white mb-4">Ultimate</h3>
-                    <div class="text-4xl font-bold text-white mb-6">$499</div>
+                <div class="card p-8 rounded-2xl price-card">
+                    <h3 class="text-2xl font-semibold mb-4">Ultimate</h3>
+                    <div class="text-4xl font-bold mb-6">$499</div>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Everything in Premium
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Full interior detail
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Engine bay cleaning
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
+                            <i class="fas fa-check text-primary mr-3"></i>
                             Paint protection film
                         </li>
                     </ul>
-                    <a href="#contact" class="btn-secondary text-white w-full">Book Now</a>
+                    <a href="#contact" class="btn-secondary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="section-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">Our Work</h2>
-            <p class="section-subtitle">See the transformation we bring to every vehicle</p>
+    <section id="gallery" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Work</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Gallery items will be added here -->
                 <div class="gallery-item">
                     <img src="images/gallery1.jpg" alt="Detailing Work" class="w-full h-full object-cover">
                 </div>
@@ -641,29 +546,28 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">Contact Us</h2>
-            <p class="section-subtitle">Get in touch to schedule your detailing service</p>
+    <section id="contact" class="py-24 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 section-title">Contact Us</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Contact Form -->
-                <div class="card-bg p-8 rounded-lg">
+                <div class="card p-8 rounded-2xl">
                     <form class="space-y-6">
                         <div>
                             <label for="name" class="block text-white mb-2">Name</label>
-                            <input type="text" id="name" class="input-bg w-full" required>
+                            <input type="text" id="name" class="input-field w-full" required>
                         </div>
                         <div>
                             <label for="email" class="block text-white mb-2">Email</label>
-                            <input type="email" id="email" class="input-bg w-full" required>
+                            <input type="email" id="email" class="input-field w-full" required>
                         </div>
                         <div>
                             <label for="phone" class="block text-white mb-2">Phone</label>
-                            <input type="tel" id="phone" class="input-bg w-full" required>
+                            <input type="tel" id="phone" class="input-field w-full" required>
                         </div>
                         <div>
                             <label for="service" class="block text-white mb-2">Service</label>
-                            <select id="service" class="input-bg w-full" required>
+                            <select id="service" class="input-field w-full" required>
                                 <option value="">Select a service</option>
                                 <option value="basic">Basic Package</option>
                                 <option value="premium">Premium Package</option>
@@ -672,57 +576,57 @@
                         </div>
                         <div>
                             <label for="message" class="block text-white mb-2">Message</label>
-                            <textarea id="message" rows="4" class="input-bg w-full" required></textarea>
+                            <textarea id="message" rows="4" class="input-field w-full" required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary text-white w-full">Send Message</button>
+                        <button type="submit" class="btn-primary text-white w-full py-4 rounded-xl text-center font-semibold">Send Message</button>
                     </form>
                 </div>
 
                 <!-- Contact Information -->
                 <div class="space-y-8">
-                    <div class="card-bg p-8 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+                    <div class="card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
                         <div class="space-y-6">
                             <div class="contact-info-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div>
                                     <h4 class="text-white font-semibold">Location</h4>
-                                    <p class="text-[#BBBBBB]">123 Detailing Street, City, State</p>
+                                    <p class="text-gray-300">123 Detailing Street, City, State</p>
                                 </div>
                             </div>
                             <div class="contact-info-item">
                                 <i class="fas fa-phone"></i>
                                 <div>
                                     <h4 class="text-white font-semibold">Phone</h4>
-                                    <p class="text-[#BBBBBB]">(555) 123-4567</p>
+                                    <p class="text-gray-300">(555) 123-4567</p>
                                 </div>
                             </div>
                             <div class="contact-info-item">
                                 <i class="fas fa-envelope"></i>
                                 <div>
                                     <h4 class="text-white font-semibold">Email</h4>
-                                    <p class="text-[#BBBBBB]">info@passiondetailing.com</p>
+                                    <p class="text-gray-300">info@passiondetailing.com</p>
                                 </div>
                             </div>
                             <div class="contact-info-item">
                                 <i class="fas fa-clock"></i>
                                 <div>
                                     <h4 class="text-white font-semibold">Hours</h4>
-                                    <p class="text-[#BBBBBB]">Mon-Sat: 9AM - 6PM</p>
+                                    <p class="text-gray-300">Mon-Sat: 9AM - 6PM</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card-bg p-8 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-white mb-6">Follow Us</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-[#BBBBBB] hover:text-white transition-colors">
+                    <div class="card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-semibold mb-6">Follow Us</h3>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-300 hover:text-primary transition-colors">
                                 <i class="fab fa-facebook-f text-2xl"></i>
                             </a>
-                            <a href="#" class="text-[#BBBBBB] hover:text-white transition-colors">
+                            <a href="#" class="text-gray-300 hover:text-primary transition-colors">
                                 <i class="fab fa-instagram text-2xl"></i>
                             </a>
-                            <a href="#" class="text-[#BBBBBB] hover:text-white transition-colors">
+                            <a href="#" class="text-gray-300 hover:text-primary transition-colors">
                                 <i class="fab fa-twitter text-2xl"></i>
                             </a>
                         </div>
@@ -733,39 +637,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer-bg">
-        <div class="container mx-auto px-4">
+    <footer class="py-12 bg-dark">
+        <div class="container mx-auto px-6">
             <div class="text-center">
-                <p class="text-[#BBBBBB]">&copy; 2024 Passion Detailing. All rights reserved.</p>
+                <p class="text-gray-400">&copy; 2024 Passion Detailing. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Floating Book Now Button -->
-    <a href="#contact" class="fixed bottom-8 right-8 bg-[#BBBBBB] text-[#000000] px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-[#000000] hover:text-[#BBBBBB] transition duration-300 z-50">
-        Book Now
-    </a>
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const closeMobileMenu = document.getElementById('closeMobileMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
-
-        closeMobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
 </body>
 </html> 
