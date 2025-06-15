@@ -49,6 +49,10 @@
             min-height: 100vh;
             background-color: #000000;
             position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         .gradient-text {
             background: linear-gradient(135deg, #CD212A 0%, #FF4D4D 100%);
@@ -59,11 +63,27 @@
         }
         .section-bg {
             background-color: #000000;
+            position: relative;
+        }
+        .section-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(205, 33, 42, 0.3), transparent);
         }
         .card-bg {
             background-color: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .card-bg:hover {
+            transform: translateY(-5px);
+            border-color: rgba(205, 33, 42, 0.3);
+            box-shadow: 0 10px 30px rgba(205, 33, 42, 0.1);
         }
         .glass-effect {
             background-color: rgba(0, 0, 0, 0.8);
@@ -93,15 +113,32 @@
             background-color: rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.08);
             font-family: 'Made Tommy Soft', sans-serif;
+            transition: all 0.3s ease;
         }
         .input-bg:focus {
             border-color: rgba(205, 33, 42, 0.5);
             box-shadow: 0 0 0 2px rgba(205, 33, 42, 0.15);
+            background-color: rgba(0, 0, 0, 0.7);
         }
         .btn-primary {
             background: linear-gradient(135deg, #CD212A 0%, #FF4D4D 100%);
             transition: all 0.3s ease;
             font-family: 'Made Tommy Soft', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        .btn-primary:hover::before {
+            left: 100%;
         }
         .btn-primary:hover {
             transform: translateY(-2px);
@@ -111,10 +148,99 @@
             background: rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             font-family: 'Made Tommy Soft', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: 0.5s;
+        }
+        .btn-secondary:hover::before {
+            left: 100%;
         }
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
+        }
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(205, 33, 42, 0.1) 0%, rgba(255, 77, 77, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .service-icon i {
+            font-size: 1.5rem;
+            color: #CD212A;
+            transition: all 0.3s ease;
+        }
+        .card-bg:hover .service-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(205, 33, 42, 0.2) 0%, rgba(255, 77, 77, 0.2) 100%);
+        }
+        .card-bg:hover .service-icon i {
+            transform: scale(1.1);
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .gallery-item img {
+            transition: all 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        .price-card {
+            transition: all 0.3s ease;
+        }
+        .price-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(205, 33, 42, 0.3);
+        }
+        .price-card.popular {
+            border: 2px solid rgba(205, 33, 42, 0.3);
+            transform: scale(1.05);
+        }
+        .price-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        .contact-info-item {
+            transition: all 0.3s ease;
+        }
+        .contact-info-item:hover {
+            transform: translateX(5px);
+        }
+        .contact-info-item i {
+            transition: all 0.3s ease;
+        }
+        .contact-info-item:hover i {
+            color: #CD212A;
         }
         .animate-fade-in {
             animation: fadeIn 1s ease-out forwards;
