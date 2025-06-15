@@ -77,13 +77,18 @@
             width: 100%;
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
 
         .nav-bg {
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(64, 64, 64, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
         }
 
         .hero-section {
@@ -93,7 +98,7 @@
             background-position: center;
             display: flex;
             align-items: center;
-            position: relative;
+            padding-top: 5rem;
         }
 
         .card {
@@ -102,6 +107,7 @@
             border-radius: 1rem;
             transition: all 0.3s ease;
             overflow: hidden;
+            height: 100%;
         }
 
         .card:hover {
@@ -111,41 +117,38 @@
             background: #1A1A1A;
         }
 
-        .btn-primary {
-            background: #000000;
-            color: #F5F5F5;
+        .btn {
+            display: inline-block;
             padding: 1rem 2rem;
             border-radius: 0.75rem;
             font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid #404040;
-            display: inline-block;
             text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #404040;
+        }
+
+        .btn-primary {
+            background: #000000;
+            color: #F5F5F5;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
             background: #1A1A1A;
             border-color: #525252;
+            transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-secondary {
             background: #1A1A1A;
             color: #F5F5F5;
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid #404040;
-            display: inline-block;
-            text-align: center;
         }
 
         .btn-secondary:hover {
             background: #262626;
-            transform: translateY(-2px);
             border-color: #525252;
+            transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
@@ -159,14 +162,12 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-            color: #F5F5F5;
             margin: 0 auto 1.5rem;
         }
 
         .service-icon i {
             font-size: 2rem;
             color: #F5F5F5;
-            transition: all 0.3s ease;
         }
 
         .card:hover .service-icon {
@@ -234,20 +235,20 @@
         }
 
         .input-field {
+            width: 100%;
             background: #1A1A1A;
             border: 1px solid #404040;
-            transition: all 0.3s ease;
-            padding: 1rem;
             border-radius: 0.75rem;
+            padding: 1rem;
             color: #F5F5F5;
-            width: 100%;
+            transition: all 0.3s ease;
         }
 
         .input-field:focus {
-            border-color: #525252;
-            box-shadow: 0 0 0 2px rgba(82, 82, 82, 0.2);
-            background: #262626;
             outline: none;
+            border-color: #525252;
+            background: #262626;
+            box-shadow: 0 0 0 2px rgba(82, 82, 82, 0.2);
         }
 
         .section-title {
@@ -346,16 +347,19 @@
 
         @media (max-width: 768px) {
             .container {
-                padding: 0 1.5rem;
+                padding: 0 1rem;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .btn-primary,
-            .btn-secondary {
+            .btn {
                 padding: 0.875rem 1.5rem;
+            }
+
+            .hero-section {
+                padding-top: 4rem;
             }
         }
     </style>
@@ -401,19 +405,17 @@
     <a href="#main-content" class="skip-nav">Skip to main content</a>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 nav-bg" role="navigation" aria-label="Main navigation">
-        <div class="container mx-auto px-6">
+    <nav class="nav-bg">
+        <div class="container">
             <div class="flex items-center justify-between h-20">
-                <a href="#" class="text-2xl font-bold text-white">
-                    <span class="text-primary">Passion</span>Detailing
-                </a>
+                <a href="#" class="text-2xl font-bold text-white">Passion Detailing</a>
                 <div class="hidden md:flex space-x-8">
                     <a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a>
                     <a href="#gallery" class="text-gray-300 hover:text-white transition-colors">Gallery</a>
                     <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
                     <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
                 </div>
-                <button class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <button class="md:hidden text-gray-300 hover:text-white focus:outline-none" aria-label="Menu">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -423,257 +425,158 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero-section flex items-center" aria-label="Hero section">
-            <div class="container mx-auto px-6">
+        <section class="hero-section">
+            <div class="container">
                 <div class="max-w-4xl mx-auto text-center">
-                    <h1 class="text-6xl md:text-7xl font-bold mb-6 animate-fade-in" style="animation-delay: 0.4s;">
-                        Premium <span class="text-primary">Automotive Care</span>
-                    </h1>
-                    <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.6s;">
-                        Experience the pinnacle of automotive detailing with our expert services. We bring out the true beauty of your vehicle.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style="animation-delay: 0.8s;">
-                        <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-xl text-lg font-semibold">
-                            Book Now
-                        </a>
-                        <a href="#services" class="btn-secondary text-white px-8 py-4 rounded-xl text-lg font-semibold">
-                            Our Services
-                        </a>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">Premium Auto Detailing</h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8">Experience the pinnacle of automotive care with our expert detailing services.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#contact" class="btn btn-primary">Book Now</a>
+                        <a href="#services" class="btn btn-secondary">Our Services</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="py-24" aria-label="Services">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Services</h2>
+        <section id="services" class="py-24">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Exterior Detailing -->
-                    <div class="card p-8 rounded-2xl">
-                        <div class="service-icon mx-auto mb-6">
+                    <div class="card p-8">
+                        <div class="service-icon">
                             <i class="fas fa-car"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold text-center mb-4">Exterior Detailing</h3>
-                        <p class="text-gray-300 mb-6 text-center">Complete exterior cleaning, paint correction, and protection services to make your vehicle shine.</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Hand wash and dry
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Clay bar treatment
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Paint correction
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Ceramic coating
-                            </li>
-                        </ul>
+                        <h3 class="text-2xl font-semibold mb-4">Exterior Detailing</h3>
+                        <p class="text-gray-300">Complete exterior cleaning, paint correction, and protection for your vehicle's finish.</p>
                     </div>
-
-                    <!-- Interior Detailing -->
-                    <div class="card p-8 rounded-2xl">
-                        <div class="service-icon mx-auto mb-6">
+                    <div class="card p-8">
+                        <div class="service-icon">
                             <i class="fas fa-couch"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold text-center mb-4">Interior Detailing</h3>
-                        <p class="text-gray-300 mb-6 text-center">Thorough interior cleaning and sanitization to restore your vehicle's cabin to its pristine condition.</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Vacuum and steam cleaning
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Leather treatment
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Carpet shampooing
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Odor elimination
-                            </li>
-                        </ul>
+                        <h3 class="text-2xl font-semibold mb-4">Interior Detailing</h3>
+                        <p class="text-gray-300">Deep cleaning and sanitization of your vehicle's interior surfaces and upholstery.</p>
                     </div>
-
-                    <!-- Paint Protection -->
-                    <div class="card p-8 rounded-2xl">
-                        <div class="service-icon mx-auto mb-6">
+                    <div class="card p-8">
+                        <div class="service-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold text-center mb-4">Paint Protection</h3>
-                        <p class="text-gray-300 mb-6 text-center">Advanced protection solutions to keep your vehicle's paint looking new for years to come.</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Ceramic coating
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Paint sealant
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                PPF installation
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Maintenance plans
-                            </li>
-                        </ul>
+                        <h3 class="text-2xl font-semibold mb-4">Paint Protection</h3>
+                        <p class="text-gray-300">Advanced ceramic coating and paint protection film installation services.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Pricing Section -->
-        <section id="pricing" class="py-24 bg-secondary" aria-label="Pricing">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Pricing</h2>
+        <section id="pricing" class="py-24 bg-secondary">
+            <div class="container">
+                <h2 class="section-title">Our Pricing</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Basic Package -->
-                    <div class="card p-8 rounded-2xl price-card">
-                        <h3 class="text-2xl font-semibold mb-4">Basic</h3>
-                        <div class="text-4xl font-bold mb-6">$149</div>
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-semibold mb-4">Basic Package</h3>
+                        <p class="text-3xl font-bold mb-6">$149</p>
                         <ul class="space-y-4 mb-8">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Exterior hand wash
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Exterior Wash</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Interior vacuum
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Interior Vacuum</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Window cleaning
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Tire dressing
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Window Cleaning</span>
                             </li>
                         </ul>
-                        <a href="#contact" class="btn-secondary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
+                        <a href="#contact" class="btn btn-primary w-full">Book Now</a>
                     </div>
-
-                    <!-- Premium Package -->
-                    <div class="card p-8 rounded-2xl price-card popular">
-                        <div class="absolute top-0 right-0 bg-primary text-white px-4 py-2 rounded-bl-xl">Popular</div>
-                        <h3 class="text-2xl font-semibold mb-4">Premium</h3>
-                        <div class="text-4xl font-bold mb-6">$299</div>
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-semibold mb-4">Premium Package</h3>
+                        <p class="text-3xl font-bold mb-6">$299</p>
                         <ul class="space-y-4 mb-8">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Everything in Basic
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Basic Package +</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Clay bar treatment
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Paint Correction</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Paint correction
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Ceramic coating
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Ceramic Coating</span>
                             </li>
                         </ul>
-                        <a href="#contact" class="btn-primary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
+                        <a href="#contact" class="btn btn-primary w-full">Book Now</a>
                     </div>
-
-                    <!-- Ultimate Package -->
-                    <div class="card p-8 rounded-2xl price-card">
-                        <h3 class="text-2xl font-semibold mb-4">Ultimate</h3>
-                        <div class="text-4xl font-bold mb-6">$499</div>
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-semibold mb-4">Ultimate Package</h3>
+                        <p class="text-3xl font-bold mb-6">$499</p>
                         <ul class="space-y-4 mb-8">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Everything in Premium
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Premium Package +</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Full interior detail
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Paint Protection Film</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Engine bay cleaning
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-3"></i>
-                                Paint protection film
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Lifetime Warranty</span>
                             </li>
                         </ul>
-                        <a href="#contact" class="btn-secondary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
+                        <a href="#contact" class="btn btn-primary w-full">Book Now</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Gallery Section -->
-        <section id="gallery" class="py-24" aria-label="Gallery">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Work</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section id="gallery" class="py-24">
+            <div class="container">
+                <h2 class="section-title">Our Work</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="gallery-item">
-                        <img src="images/gallery1.jpg" alt="Detailing Work" class="w-full h-full object-cover">
+                        <img src="images/gallery1.jpg" alt="Detailing work example 1">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/gallery2.jpg" alt="Detailing Work" class="w-full h-full object-cover">
+                        <img src="images/gallery2.jpg" alt="Detailing work example 2">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/gallery3.jpg" alt="Detailing Work" class="w-full h-full object-cover">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/gallery4.jpg" alt="Detailing Work" class="w-full h-full object-cover">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/gallery5.jpg" alt="Detailing Work" class="w-full h-full object-cover">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/gallery6.jpg" alt="Detailing Work" class="w-full h-full object-cover">
+                        <img src="images/gallery3.jpg" alt="Detailing work example 3">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-24 bg-secondary" aria-label="Contact">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-16 section-title">Contact Us</h2>
+        <section id="contact" class="py-24 bg-secondary">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Contact Form -->
-                    <div class="card p-8 rounded-2xl">
-                        <form class="space-y-6" id="contactForm" novalidate>
+                    <div class="card p-8">
+                        <form id="contactForm" class="space-y-6" novalidate>
                             <div>
                                 <label for="name" class="block text-white mb-2">Name</label>
-                                <input type="text" id="name" name="name" class="input-field w-full" required
-                                    aria-required="true" aria-invalid="false">
+                                <input type="text" id="name" name="name" class="input-field" required>
                                 <div class="error-message" id="nameError"></div>
                             </div>
                             <div>
                                 <label for="email" class="block text-white mb-2">Email</label>
-                                <input type="email" id="email" name="email" class="input-field w-full" required
-                                    aria-required="true" aria-invalid="false">
+                                <input type="email" id="email" name="email" class="input-field" required>
                                 <div class="error-message" id="emailError"></div>
                             </div>
                             <div>
                                 <label for="phone" class="block text-white mb-2">Phone</label>
-                                <input type="tel" id="phone" name="phone" class="input-field w-full" required
-                                    aria-required="true" aria-invalid="false">
+                                <input type="tel" id="phone" name="phone" class="input-field" required>
                                 <div class="error-message" id="phoneError"></div>
                             </div>
                             <div>
                                 <label for="service" class="block text-white mb-2">Service</label>
-                                <select id="service" name="service" class="input-field w-full" required
-                                    aria-required="true" aria-invalid="false">
+                                <select id="service" name="service" class="input-field" required>
                                     <option value="">Select a service</option>
                                     <option value="basic">Basic Package</option>
                                     <option value="premium">Premium Package</option>
@@ -683,20 +586,15 @@
                             </div>
                             <div>
                                 <label for="message" class="block text-white mb-2">Message</label>
-                                <textarea id="message" name="message" rows="4" class="input-field w-full" required
-                                    aria-required="true" aria-invalid="false"></textarea>
+                                <textarea id="message" name="message" rows="4" class="input-field" required></textarea>
                                 <div class="error-message" id="messageError"></div>
                             </div>
                             <div class="success-message" id="formSuccess"></div>
-                            <button type="submit" class="btn-primary text-white w-full py-4 rounded-xl text-center font-semibold">
-                                Send Message
-                            </button>
+                            <button type="submit" class="btn btn-primary w-full">Send Message</button>
                         </form>
                     </div>
-
-                    <!-- Contact Information -->
                     <div class="space-y-8">
-                        <div class="card p-8 rounded-2xl">
+                        <div class="card p-8">
                             <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
                             <div class="space-y-6">
                                 <div class="contact-info-item">
@@ -731,16 +629,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card p-8 rounded-2xl">
+                        <div class="card p-8">
                             <h3 class="text-2xl font-semibold mb-6">Follow Us</h3>
                             <div class="flex space-x-6">
-                                <a href="#" class="text-gray-300 hover:text-primary transition-colors" aria-label="Facebook">
+                                <a href="#" class="text-gray-300 hover:text-white transition-colors" aria-label="Facebook">
                                     <i class="fab fa-facebook-f text-2xl" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="text-gray-300 hover:text-primary transition-colors" aria-label="Instagram">
+                                <a href="#" class="text-gray-300 hover:text-white transition-colors" aria-label="Instagram">
                                     <i class="fab fa-instagram text-2xl" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="text-gray-300 hover:text-primary transition-colors" aria-label="Twitter">
+                                <a href="#" class="text-gray-300 hover:text-white transition-colors" aria-label="Twitter">
                                     <i class="fab fa-twitter text-2xl" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -752,33 +650,31 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 bg-dark" role="contentinfo">
-        <div class="container mx-auto px-6">
+    <footer>
+        <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="text-white font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
-                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#services" class="footer-link">Services</a></li>
+                        <li><a href="#gallery" class="footer-link">Gallery</a></li>
+                        <li><a href="#pricing" class="footer-link">Pricing</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-white font-semibold mb-4">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-                        <li><a href="/cookies" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="/privacy" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="/terms" class="footer-link">Terms of Service</a></li>
+                        <li><a href="/cookies" class="footer-link">Cookie Policy</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-white font-semibold mb-4">Newsletter</h3>
                     <form class="space-y-4">
-                        <input type="email" placeholder="Enter your email" class="input-field w-full" required>
-                        <button type="submit" class="btn-primary text-white w-full py-3 rounded-xl text-center font-semibold">
-                            Subscribe
-                        </button>
+                        <input type="email" placeholder="Enter your email" class="input-field" required>
+                        <button type="submit" class="btn btn-primary w-full">Subscribe</button>
                     </form>
                 </div>
             </div>
@@ -790,13 +686,11 @@
 
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
-        <div class="container mx-auto px-6">
+        <div class="container">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 <p class="text-sm">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
                 <div class="flex gap-4">
-                    <button class="btn-secondary text-white px-4 py-2 rounded-lg text-sm" onclick="acceptCookies()">
-                        Accept
-                    </button>
+                    <button class="btn btn-secondary" onclick="acceptCookies()">Accept</button>
                     <a href="/cookies" class="text-gray-300 hover:text-white text-sm">Learn More</a>
                 </div>
             </div>
