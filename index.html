@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Passion Detailing - Premium automotive detailing services. Expert care for your vehicle's exterior and interior. Book your detailing service today.">
-    <meta name="keywords" content="car detailing, auto detailing, vehicle care, paint protection, ceramic coating">
+    <meta name="description" content="Passion Detailing - Premium automotive detailing services. Expert care for your luxury vehicle's exterior and interior. Book your detailing service today.">
+    <meta name="keywords" content="luxury car detailing, premium auto detailing, vehicle care, paint protection, ceramic coating">
     <meta name="author" content="Passion Detailing">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Passion Detailing - Premium Automotive Care">
-    <meta property="og:description" content="Experience the pinnacle of automotive detailing with our expert services. We bring out the true beauty of your vehicle.">
+    <meta property="og:description" content="Experience the pinnacle of automotive detailing with our expert services. We bring out the true beauty of your luxury vehicle.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/main logo.png">
     <meta property="og:url" content="https://passiondetailing.github.io">
@@ -24,27 +24,41 @@
                     colors: {
                         primary: '#000000',    // Pure black for primary elements
                         secondary: '#1A1A1A',  // Very dark gray for backgrounds
-                        accent: '#2D2D2D',     // Dark gray for hover states
+                        accent: '#D4AF37',     // Dark gray for hover states
                         dark: '#121212',       // Near black for cards
                         light: '#F5F5F5',      // Off-white for text
-                        gray: {
-                            100: '#F5F5F5',    // Light gray for text
-                            200: '#E5E5E5',    // Border color
-                            300: '#D4D4D4',    // Secondary text
-                            400: '#A3A3A3',    // Disabled states
-                            500: '#737373',    // Icons
-                            600: '#525252',    // Subtle accents
-                            700: '#404040',    // Darker accents
-                            800: '#262626',    // Dark backgrounds
-                            900: '#171717',    // Darkest backgrounds
+                        gold: {
+                            100: '#FDF6E3',
+                            200: '#F9E4B7',
+                            300: '#F5D28B',
+                            400: '#F1C05F',
+                            500: '#D4AF37',
+                            600: '#B38F2E',
+                            700: '#926F25',
+                            800: '#714F1C',
+                            900: '#502F13',
                         }
                     },
                     fontFamily: {
-                        sans: ['Made Tommy Soft', 'sans-serif']
+                        sans: ['Montserrat', 'sans-serif']
                     },
                     spacing: {
                         '128': '32rem',
-                    }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
                 }
             }
         }
@@ -56,13 +70,17 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Made+Tommy+Soft:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Made Tommy Soft', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -83,7 +101,7 @@
         .nav-bg {
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(64, 64, 64, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
             position: fixed;
             top: 0;
             left: 0;
@@ -103,7 +121,7 @@
 
         .card {
             background: #121212;
-            border: 1px solid #262626;
+            border: 1px solid rgba(212, 175, 55, 0.1);
             border-radius: 1rem;
             transition: all 0.3s ease;
             overflow: hidden;
@@ -112,8 +130,8 @@
 
         .card:hover {
             transform: translateY(-5px);
-            border-color: #404040;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-color: #D4AF37;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
             background: #1A1A1A;
         }
 
@@ -125,38 +143,36 @@
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
-            border: 1px solid #404040;
+            border: 1px solid #D4AF37;
         }
 
         .btn-primary {
-            background: #000000;
-            color: #F5F5F5;
+            background: #D4AF37;
+            color: #000000;
         }
 
         .btn-primary:hover {
-            background: #1A1A1A;
-            border-color: #525252;
+            background: #B38F2E;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
         }
 
         .btn-secondary {
-            background: #1A1A1A;
-            color: #F5F5F5;
+            background: transparent;
+            color: #D4AF37;
         }
 
         .btn-secondary:hover {
-            background: #262626;
-            border-color: #525252;
+            background: rgba(212, 175, 55, 0.1);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
         }
 
         .service-icon {
             width: 80px;
             height: 80px;
             background: #1A1A1A;
-            border: 1px solid #404040;
+            border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 1rem;
             display: flex;
             align-items: center;
@@ -167,13 +183,13 @@
 
         .service-icon i {
             font-size: 2rem;
-            color: #F5F5F5;
+            color: #D4AF37;
         }
 
         .card:hover .service-icon {
             transform: scale(1.1) rotate(5deg);
-            background: #262626;
-            border-color: #525252;
+            background: #1A1A1A;
+            border-color: #D4AF37;
         }
 
         .gallery-item {
@@ -204,40 +220,40 @@
             border-radius: 1rem;
             transition: all 0.3s ease;
             background: #1A1A1A;
-            border: 1px solid #404040;
+            border: 1px solid rgba(212, 175, 55, 0.1);
             margin-bottom: 1rem;
         }
 
         .contact-info-item:hover {
             transform: translateX(10px);
-            background: #262626;
-            border-color: #525252;
+            background: #1A1A1A;
+            border-color: #D4AF37;
         }
 
         .contact-info-item i {
             width: 50px;
             height: 50px;
             background: #1A1A1A;
-            border: 1px solid #404040;
+            border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 0.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            color: #F5F5F5;
+            color: #D4AF37;
             transition: all 0.3s ease;
         }
 
         .contact-info-item:hover i {
-            background: #262626;
-            border-color: #525252;
+            background: #1A1A1A;
+            border-color: #D4AF37;
             transform: rotate(10deg);
         }
 
         .input-field {
             width: 100%;
             background: #1A1A1A;
-            border: 1px solid #404040;
+            border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 0.75rem;
             padding: 1rem;
             color: #F5F5F5;
@@ -246,9 +262,9 @@
 
         .input-field:focus {
             outline: none;
-            border-color: #525252;
-            background: #262626;
-            box-shadow: 0 0 0 2px rgba(82, 82, 82, 0.2);
+            border-color: #D4AF37;
+            background: #1A1A1A;
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.1);
         }
 
         .section-title {
@@ -268,7 +284,7 @@
             transform: translateX(-50%);
             width: 50px;
             height: 3px;
-            background: #404040;
+            background: #D4AF37;
             border-radius: 2px;
         }
 
@@ -332,7 +348,7 @@
 
         footer {
             background: #121212;
-            border-top: 1px solid #404040;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
             padding: 3rem 0;
         }
 
@@ -342,7 +358,7 @@
         }
 
         .footer-link:hover {
-            color: #F5F5F5;
+            color: #D4AF37;
         }
 
         @media (max-width: 768px) {
@@ -370,15 +386,13 @@
         mobileMenu.className = 'fixed inset-0 z-40 hidden bg-dark bg-opacity-95';
         mobileMenu.innerHTML = `
             <div class="flex justify-end p-6">
-                <button class="text-gray-300 hover:text-white focus:outline-none" aria-label="Close menu">
+                <button class="text-gray-300 hover:text-gold-500 focus:outline-none" aria-label="Close menu">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
             </div>
             <div class="flex flex-col items-center space-y-8 p-6">
-                <a href="#services" class="text-gray-300 hover:text-white text-xl">Services</a>
-                <a href="#gallery" class="text-gray-300 hover:text-white text-xl">Gallery</a>
-                <a href="#pricing" class="text-gray-300 hover:text-white text-xl">Pricing</a>
-                <a href="#contact" class="text-gray-300 hover:text-white text-xl">Contact</a>
+                <a href="#services" class="text-gray-300 hover:text-gold-500 text-xl">Services</a>
+                <a href="#contact" class="text-gray-300 hover:text-gold-500 text-xl">Contact</a>
             </div>
         `;
         document.body.appendChild(mobileMenu);
@@ -410,12 +424,10 @@
             <div class="flex items-center justify-between h-20">
                 <a href="#" class="text-2xl font-bold text-white">Passion Detailing</a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a>
-                    <a href="#gallery" class="text-gray-300 hover:text-white transition-colors">Gallery</a>
-                    <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                    <a href="#services" class="text-gray-300 hover:text-gold-500 transition-colors">Services</a>
+                    <a href="#contact" class="text-gray-300 hover:text-gold-500 transition-colors">Contact</a>
                 </div>
-                <button class="md:hidden text-gray-300 hover:text-white focus:outline-none" aria-label="Menu">
+                <button class="md:hidden text-gray-300 hover:text-gold-500 focus:outline-none" aria-label="Menu">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -427,11 +439,11 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6">Premium Auto Detailing</h1>
-                    <p class="text-xl md:text-2xl text-gray-300 mb-8">Experience the pinnacle of automotive care with our expert detailing services.</p>
+                <div class="max-w-4xl mx-auto text-center animate-fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">Where Perfection Meets Paint</h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8">Experience the pinnacle of automotive detailing with our expert services.</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#contact" class="btn btn-primary">Book Now</a>
+                        <a href="#contact" class="btn btn-primary">Book Your Appointment</a>
                         <a href="#services" class="btn btn-secondary">Our Services</a>
                     </div>
                 </div>
@@ -570,21 +582,6 @@
                                 <div class="error-message" id="emailError"></div>
                             </div>
                             <div>
-                                <label for="phone" class="block text-white mb-2">Phone</label>
-                                <input type="tel" id="phone" name="phone" class="input-field" required>
-                                <div class="error-message" id="phoneError"></div>
-                            </div>
-                            <div>
-                                <label for="service" class="block text-white mb-2">Service</label>
-                                <select id="service" name="service" class="input-field" required>
-                                    <option value="">Select a service</option>
-                                    <option value="basic">Basic Package</option>
-                                    <option value="premium">Premium Package</option>
-                                    <option value="ultimate">Ultimate Package</option>
-                                </select>
-                                <div class="error-message" id="serviceError"></div>
-                            </div>
-                            <div>
                                 <label for="message" class="block text-white mb-2">Message</label>
                                 <textarea id="message" name="message" rows="4" class="input-field" required></textarea>
                                 <div class="error-message" id="messageError"></div>
@@ -632,13 +629,13 @@
                         <div class="card p-8">
                             <h3 class="text-2xl font-semibold mb-6">Follow Us</h3>
                             <div class="flex space-x-6">
-                                <a href="#" class="text-gray-300 hover:text-white transition-colors" aria-label="Facebook">
+                                <a href="#" class="text-gray-300 hover:text-gold-500 transition-colors" aria-label="Facebook">
                                     <i class="fab fa-facebook-f text-2xl" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="text-gray-300 hover:text-white transition-colors" aria-label="Instagram">
+                                <a href="#" class="text-gray-300 hover:text-gold-500 transition-colors" aria-label="Instagram">
                                     <i class="fab fa-instagram text-2xl" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="text-gray-300 hover:text-white transition-colors" aria-label="Twitter">
+                                <a href="#" class="text-gray-300 hover:text-gold-500 transition-colors" aria-label="Twitter">
                                     <i class="fab fa-twitter text-2xl" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -657,8 +654,6 @@
                     <h3 class="text-white font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="#services" class="footer-link">Services</a></li>
-                        <li><a href="#gallery" class="footer-link">Gallery</a></li>
-                        <li><a href="#pricing" class="footer-link">Pricing</a></li>
                         <li><a href="#contact" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
@@ -667,7 +662,6 @@
                     <ul class="space-y-2">
                         <li><a href="/privacy" class="footer-link">Privacy Policy</a></li>
                         <li><a href="/terms" class="footer-link">Terms of Service</a></li>
-                        <li><a href="/cookies" class="footer-link">Cookie Policy</a></li>
                     </ul>
                 </div>
                 <div>
@@ -701,7 +695,7 @@
     <script>
         // Form Validation
         const form = document.getElementById('contactForm');
-        const inputs = form.querySelectorAll('input, select, textarea');
+        const inputs = form.querySelectorAll('input, textarea');
 
         function validateInput(input) {
             const errorElement = document.getElementById(`${input.id}Error`);
@@ -716,12 +710,6 @@
                 if (!emailRegex.test(input.value)) {
                     isValid = false;
                     errorMessage = 'Please enter a valid email address';
-                }
-            } else if (input.type === 'tel' && input.value) {
-                const phoneRegex = /^\+?[\d\s-]{10,}$/;
-                if (!phoneRegex.test(input.value)) {
-                    isValid = false;
-                    errorMessage = 'Please enter a valid phone number';
                 }
             }
 
