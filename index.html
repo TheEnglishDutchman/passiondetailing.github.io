@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="PassionDetailing — Expert car and bike detailing services. Mobile service, precision work, and showroom-quality results.">
-    <meta name="keywords" content="car detailing, bike detailing, mobile detailing, PassionDetailing, paint polishing, interior cleaning">
+    <meta name="description" content="Passion Detailing - Premium automotive detailing services. Expert care for your vehicle's exterior and interior. Book your detailing service today.">
+    <meta name="keywords" content="car detailing, auto detailing, vehicle care, paint protection, ceramic coating">
+    <meta name="author" content="Passion Detailing">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="PassionDetailing — Car & Bike Detailing Experts">
-    <meta property="og:description" content="Interior & exterior detailing for cars and bikes. Mobile, reliable, and professional service.">
+    <meta property="og:title" content="Passion Detailing - Premium Automotive Care">
+    <meta property="og:description" content="Experience the pinnacle of automotive detailing with our expert services. We bring out the true beauty of your vehicle.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/preview.jpg">
+    <meta property="og:image" content="images/main logo.png">
+    <meta property="og:url" content="https://passiondetailing.github.io">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <title>Passion Detailing - Premium Automotive Care</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -258,6 +262,67 @@
                 transform: translateY(0);
             }
         }
+        .skip-nav {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000000;
+            color: #FFFFFF;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-nav:focus {
+            top: 0;
+        }
+        .focus-visible:focus {
+            outline: 2px solid #3A3A3C;
+            outline-offset: 2px;
+        }
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1C1C1E;
+            color: #FFFFFF;
+            padding: 1rem;
+            z-index: 50;
+            display: none;
+        }
+        .cookie-banner.active {
+            display: block;
+        }
+        .loading {
+            position: relative;
+            pointer-events: none;
+        }
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid #D1D1D6;
+            border-top-color: #000000;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .error-message {
+            color: #FF3B30;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        .success-message {
+            color: #34C759;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
     </style>
     <!-- Mobile Menu JavaScript -->
     <script>
@@ -266,7 +331,7 @@
         mobileMenu.className = 'fixed inset-0 z-40 hidden bg-dark bg-opacity-95';
         mobileMenu.innerHTML = `
             <div class="flex justify-end p-6">
-                <button class="text-gray-300 hover:text-white focus:outline-none">
+                <button class="text-gray-300 hover:text-white focus:outline-none" aria-label="Close menu">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
             </div>
@@ -297,8 +362,11 @@
     </script>
 </head>
 <body>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 nav-bg">
+    <nav class="fixed w-full z-50 nav-bg" role="navigation" aria-label="Main navigation">
         <div class="container mx-auto px-6">
             <div class="flex items-center justify-between h-20">
                 <a href="#" class="text-2xl font-bold text-white">
@@ -317,326 +385,476 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section flex items-center">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-6xl md:text-7xl font-bold mb-6 animate-fade-in" style="animation-delay: 0.4s;">
-                    Premium <span class="text-primary">Automotive Care</span>
-                </h1>
-                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.6s;">
-                    Experience the pinnacle of automotive detailing with our expert services. We bring out the true beauty of your vehicle.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style="animation-delay: 0.8s;">
-                    <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-xl text-lg font-semibold">
-                        Book Now
-                    </a>
-                    <a href="#services" class="btn-secondary text-white px-8 py-4 rounded-xl text-lg font-semibold">
-                        Our Services
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Exterior Detailing -->
-                <div class="card p-8 rounded-2xl">
-                    <div class="service-icon mx-auto mb-6">
-                        <i class="fas fa-car"></i>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section flex items-center" aria-label="Hero section">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-6xl md:text-7xl font-bold mb-6 animate-fade-in" style="animation-delay: 0.4s;">
+                        Premium <span class="text-primary">Automotive Care</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.6s;">
+                        Experience the pinnacle of automotive detailing with our expert services. We bring out the true beauty of your vehicle.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style="animation-delay: 0.8s;">
+                        <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-xl text-lg font-semibold">
+                            Book Now
+                        </a>
+                        <a href="#services" class="btn-secondary text-white px-8 py-4 rounded-xl text-lg font-semibold">
+                            Our Services
+                        </a>
                     </div>
-                    <h3 class="text-2xl font-semibold text-center mb-4">Exterior Detailing</h3>
-                    <p class="text-gray-300 mb-6 text-center">Complete exterior cleaning, paint correction, and protection services to make your vehicle shine.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Hand wash and dry
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Clay bar treatment
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Paint correction
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Ceramic coating
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Interior Detailing -->
-                <div class="card p-8 rounded-2xl">
-                    <div class="service-icon mx-auto mb-6">
-                        <i class="fas fa-couch"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-center mb-4">Interior Detailing</h3>
-                    <p class="text-gray-300 mb-6 text-center">Thorough interior cleaning and sanitization to restore your vehicle's cabin to its pristine condition.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Vacuum and steam cleaning
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Leather treatment
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Carpet shampooing
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Odor elimination
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Paint Protection -->
-                <div class="card p-8 rounded-2xl">
-                    <div class="service-icon mx-auto mb-6">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-center mb-4">Paint Protection</h3>
-                    <p class="text-gray-300 mb-6 text-center">Advanced protection solutions to keep your vehicle's paint looking new for years to come.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Ceramic coating
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Paint sealant
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            PPF installation
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Maintenance plans
-                        </li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-24 bg-secondary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Pricing</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Basic Package -->
-                <div class="card p-8 rounded-2xl price-card">
-                    <h3 class="text-2xl font-semibold mb-4">Basic</h3>
-                    <div class="text-4xl font-bold mb-6">$149</div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Exterior hand wash
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Interior vacuum
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Window cleaning
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Tire dressing
-                        </li>
-                    </ul>
-                    <a href="#contact" class="btn-secondary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
-                </div>
-
-                <!-- Premium Package -->
-                <div class="card p-8 rounded-2xl price-card popular">
-                    <div class="absolute top-0 right-0 bg-primary text-white px-4 py-2 rounded-bl-xl">Popular</div>
-                    <h3 class="text-2xl font-semibold mb-4">Premium</h3>
-                    <div class="text-4xl font-bold mb-6">$299</div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Everything in Basic
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Clay bar treatment
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Paint correction
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Ceramic coating
-                        </li>
-                    </ul>
-                    <a href="#contact" class="btn-primary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
-                </div>
-
-                <!-- Ultimate Package -->
-                <div class="card p-8 rounded-2xl price-card">
-                    <h3 class="text-2xl font-semibold mb-4">Ultimate</h3>
-                    <div class="text-4xl font-bold mb-6">$499</div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Everything in Premium
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Full interior detail
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Engine bay cleaning
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-primary mr-3"></i>
-                            Paint protection film
-                        </li>
-                    </ul>
-                    <a href="#contact" class="btn-secondary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Work</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="gallery-item">
-                    <img src="images/gallery1.jpg" alt="Detailing Work" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery2.jpg" alt="Detailing Work" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery3.jpg" alt="Detailing Work" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery4.jpg" alt="Detailing Work" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery5.jpg" alt="Detailing Work" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery6.jpg" alt="Detailing Work" class="w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-secondary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 section-title">Contact Us</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="card p-8 rounded-2xl">
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-white mb-2">Name</label>
-                            <input type="text" id="name" class="input-field w-full" required>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-white mb-2">Email</label>
-                            <input type="email" id="email" class="input-field w-full" required>
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-white mb-2">Phone</label>
-                            <input type="tel" id="phone" class="input-field w-full" required>
-                        </div>
-                        <div>
-                            <label for="service" class="block text-white mb-2">Service</label>
-                            <select id="service" class="input-field w-full" required>
-                                <option value="">Select a service</option>
-                                <option value="basic">Basic Package</option>
-                                <option value="premium">Premium Package</option>
-                                <option value="ultimate">Ultimate Package</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-white mb-2">Message</label>
-                            <textarea id="message" rows="4" class="input-field w-full" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary text-white w-full py-4 rounded-xl text-center font-semibold">Send Message</button>
-                    </form>
-                </div>
-
-                <!-- Contact Information -->
-                <div class="space-y-8">
+        <!-- Services Section -->
+        <section id="services" class="py-24" aria-label="Services">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Exterior Detailing -->
                     <div class="card p-8 rounded-2xl">
-                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
-                        <div class="space-y-6">
-                            <div class="contact-info-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <h4 class="text-white font-semibold">Location</h4>
-                                    <p class="text-gray-300">123 Detailing Street, City, State</p>
-                                </div>
+                        <div class="service-icon mx-auto mb-6">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-center mb-4">Exterior Detailing</h3>
+                        <p class="text-gray-300 mb-6 text-center">Complete exterior cleaning, paint correction, and protection services to make your vehicle shine.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Hand wash and dry
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Clay bar treatment
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Paint correction
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Ceramic coating
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Interior Detailing -->
+                    <div class="card p-8 rounded-2xl">
+                        <div class="service-icon mx-auto mb-6">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-center mb-4">Interior Detailing</h3>
+                        <p class="text-gray-300 mb-6 text-center">Thorough interior cleaning and sanitization to restore your vehicle's cabin to its pristine condition.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Vacuum and steam cleaning
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Leather treatment
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Carpet shampooing
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Odor elimination
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Paint Protection -->
+                    <div class="card p-8 rounded-2xl">
+                        <div class="service-icon mx-auto mb-6">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-center mb-4">Paint Protection</h3>
+                        <p class="text-gray-300 mb-6 text-center">Advanced protection solutions to keep your vehicle's paint looking new for years to come.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Ceramic coating
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Paint sealant
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                PPF installation
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Maintenance plans
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-24 bg-secondary" aria-label="Pricing">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Pricing</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Basic Package -->
+                    <div class="card p-8 rounded-2xl price-card">
+                        <h3 class="text-2xl font-semibold mb-4">Basic</h3>
+                        <div class="text-4xl font-bold mb-6">$149</div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Exterior hand wash
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Interior vacuum
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Window cleaning
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Tire dressing
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn-secondary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
+                    </div>
+
+                    <!-- Premium Package -->
+                    <div class="card p-8 rounded-2xl price-card popular">
+                        <div class="absolute top-0 right-0 bg-primary text-white px-4 py-2 rounded-bl-xl">Popular</div>
+                        <h3 class="text-2xl font-semibold mb-4">Premium</h3>
+                        <div class="text-4xl font-bold mb-6">$299</div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Everything in Basic
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Clay bar treatment
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Paint correction
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Ceramic coating
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn-primary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
+                    </div>
+
+                    <!-- Ultimate Package -->
+                    <div class="card p-8 rounded-2xl price-card">
+                        <h3 class="text-2xl font-semibold mb-4">Ultimate</h3>
+                        <div class="text-4xl font-bold mb-6">$499</div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Everything in Premium
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Full interior detail
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Engine bay cleaning
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                Paint protection film
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn-secondary text-white w-full py-4 rounded-xl text-center font-semibold">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-24" aria-label="Gallery">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16 section-title">Our Work</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="gallery-item">
+                        <img src="images/gallery1.jpg" alt="Detailing Work" class="w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery2.jpg" alt="Detailing Work" class="w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery3.jpg" alt="Detailing Work" class="w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery4.jpg" alt="Detailing Work" class="w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery5.jpg" alt="Detailing Work" class="w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery6.jpg" alt="Detailing Work" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-secondary" aria-label="Contact">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16 section-title">Contact Us</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="card p-8 rounded-2xl">
+                        <form class="space-y-6" id="contactForm" novalidate>
+                            <div>
+                                <label for="name" class="block text-white mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="input-field w-full" required
+                                    aria-required="true" aria-invalid="false">
+                                <div class="error-message" id="nameError"></div>
                             </div>
-                            <div class="contact-info-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <h4 class="text-white font-semibold">Phone</h4>
-                                    <p class="text-gray-300">(555) 123-4567</p>
-                                </div>
+                            <div>
+                                <label for="email" class="block text-white mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="input-field w-full" required
+                                    aria-required="true" aria-invalid="false">
+                                <div class="error-message" id="emailError"></div>
                             </div>
-                            <div class="contact-info-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <h4 class="text-white font-semibold">Email</h4>
-                                    <p class="text-gray-300">info@passiondetailing.com</p>
-                                </div>
+                            <div>
+                                <label for="phone" class="block text-white mb-2">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="input-field w-full" required
+                                    aria-required="true" aria-invalid="false">
+                                <div class="error-message" id="phoneError"></div>
                             </div>
-                            <div class="contact-info-item">
-                                <i class="fas fa-clock"></i>
-                                <div>
-                                    <h4 class="text-white font-semibold">Hours</h4>
-                                    <p class="text-gray-300">Mon-Sat: 9AM - 6PM</p>
+                            <div>
+                                <label for="service" class="block text-white mb-2">Service</label>
+                                <select id="service" name="service" class="input-field w-full" required
+                                    aria-required="true" aria-invalid="false">
+                                    <option value="">Select a service</option>
+                                    <option value="basic">Basic Package</option>
+                                    <option value="premium">Premium Package</option>
+                                    <option value="ultimate">Ultimate Package</option>
+                                </select>
+                                <div class="error-message" id="serviceError"></div>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-white mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" class="input-field w-full" required
+                                    aria-required="true" aria-invalid="false"></textarea>
+                                <div class="error-message" id="messageError"></div>
+                            </div>
+                            <div class="success-message" id="formSuccess"></div>
+                            <button type="submit" class="btn-primary text-white w-full py-4 rounded-xl text-center font-semibold">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <div class="card p-8 rounded-2xl">
+                            <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                            <div class="space-y-6">
+                                <div class="contact-info-item">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Location</h4>
+                                        <p class="text-gray-300">123 Detailing Street, City, State</p>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Phone</h4>
+                                        <p class="text-gray-300">(555) 123-4567</p>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Email</h4>
+                                        <p class="text-gray-300">info@passiondetailing.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <i class="fas fa-clock" aria-hidden="true"></i>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Hours</h4>
+                                        <p class="text-gray-300">Monday - Friday: 9AM - 6PM</p>
+                                        <p class="text-gray-300">Saturday: 10AM - 4PM</p>
+                                        <p class="text-gray-300">Sunday: Closed</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card p-8 rounded-2xl">
-                        <h3 class="text-2xl font-semibold mb-6">Follow Us</h3>
-                        <div class="flex space-x-6">
-                            <a href="#" class="text-gray-300 hover:text-primary transition-colors">
-                                <i class="fab fa-facebook-f text-2xl"></i>
-                            </a>
-                            <a href="#" class="text-gray-300 hover:text-primary transition-colors">
-                                <i class="fab fa-instagram text-2xl"></i>
-                            </a>
-                            <a href="#" class="text-gray-300 hover:text-primary transition-colors">
-                                <i class="fab fa-twitter text-2xl"></i>
-                            </a>
+                        <div class="card p-8 rounded-2xl">
+                            <h3 class="text-2xl font-semibold mb-6">Follow Us</h3>
+                            <div class="flex space-x-6">
+                                <a href="#" class="text-gray-300 hover:text-primary transition-colors" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f text-2xl" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="text-gray-300 hover:text-primary transition-colors" aria-label="Instagram">
+                                    <i class="fab fa-instagram text-2xl" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="text-gray-300 hover:text-primary transition-colors" aria-label="Twitter">
+                                    <i class="fab fa-twitter text-2xl" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="py-12 bg-dark">
+    <footer class="py-12 bg-dark" role="contentinfo">
         <div class="container mx-auto px-6">
-            <div class="text-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="/cookies" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Newsletter</h3>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter your email" class="input-field w-full" required>
+                        <button type="submit" class="btn-primary text-white w-full py-3 rounded-xl text-center font-semibold">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center mt-8 pt-8 border-t border-gray-800">
                 <p class="text-gray-400">&copy; 2024 Passion Detailing. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+                <div class="flex gap-4">
+                    <button class="btn-secondary text-white px-4 py-2 rounded-lg text-sm" onclick="acceptCookies()">
+                        Accept
+                    </button>
+                    <a href="/cookies" class="text-gray-300 hover:text-white text-sm">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Form Validation
+        const form = document.getElementById('contactForm');
+        const inputs = form.querySelectorAll('input, select, textarea');
+
+        function validateInput(input) {
+            const errorElement = document.getElementById(`${input.id}Error`);
+            let isValid = true;
+            let errorMessage = '';
+
+            if (input.required && !input.value.trim()) {
+                isValid = false;
+                errorMessage = 'This field is required';
+            } else if (input.type === 'email' && input.value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(input.value)) {
+                    isValid = false;
+                    errorMessage = 'Please enter a valid email address';
+                }
+            } else if (input.type === 'tel' && input.value) {
+                const phoneRegex = /^\+?[\d\s-]{10,}$/;
+                if (!phoneRegex.test(input.value)) {
+                    isValid = false;
+                    errorMessage = 'Please enter a valid phone number';
+                }
+            }
+
+            input.setAttribute('aria-invalid', !isValid);
+            errorElement.textContent = errorMessage;
+            return isValid;
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => validateInput(input));
+            input.addEventListener('input', () => {
+                if (input.hasAttribute('aria-invalid')) {
+                    validateInput(input);
+                }
+            });
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!validateInput(input)) {
+                    isValid = false;
+                }
+            });
+
+            if (isValid) {
+                const submitButton = form.querySelector('button[type="submit"]');
+                submitButton.classList.add('loading');
+                submitButton.disabled = true;
+
+                try {
+                    // Simulate form submission
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    const successMessage = document.getElementById('formSuccess');
+                    successMessage.textContent = 'Thank you for your message. We will get back to you soon!';
+                    form.reset();
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                } finally {
+                    submitButton.classList.remove('loading');
+                    submitButton.disabled = false;
+                }
+            }
+        });
+
+        // Cookie Banner
+        function showCookieBanner() {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookieBanner').classList.add('active');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookieBanner').classList.remove('active');
+        }
+
+        // Show cookie banner on page load
+        document.addEventListener('DOMContentLoaded', showCookieBanner);
+    </script>
 </body>
 </html> 
