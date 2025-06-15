@@ -38,14 +38,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Made+Tommy+Soft:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
             font-family: 'Made Tommy Soft', sans-serif;
+        }
+        body {
             background-color: #000000;
             color: #BBBBBB;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'League Spartan', sans-serif;
-            color: #CCCCCC;
         }
         .hero-section {
             min-height: 100vh;
@@ -57,6 +55,33 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-family: 'Made Tommy Soft', sans-serif;
+        }
+        .section-bg {
+            background-color: #000000;
+        }
+        .card-bg {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-effect {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .nav-bg {
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .mobile-menu {
+            background-color: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(10px);
+        }
+        .footer-bg {
+            background-color: #000000;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
         .hover-lift {
             transition: transform 0.3s ease;
@@ -64,14 +89,32 @@
         .hover-lift:hover {
             transform: translateY(-5px);
         }
-        .glass-effect {
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
+        .input-bg {
+            background-color: rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.08);
+            font-family: 'Made Tommy Soft', sans-serif;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .input-bg:focus {
+            border-color: rgba(205, 33, 42, 0.5);
+            box-shadow: 0 0 0 2px rgba(205, 33, 42, 0.15);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #CD212A 0%, #FF4D4D 100%);
+            transition: all 0.3s ease;
+            font-family: 'Made Tommy Soft', sans-serif;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(205, 33, 42, 0.3);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            font-family: 'Made Tommy Soft', sans-serif;
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
         .animate-fade-in {
             animation: fadeIn 1s ease-out forwards;
@@ -84,22 +127,6 @@
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        .section-bg {
-            background-color: #000000;
-        }
-        .card-bg {
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .input-bg {
-            background-color: #000000;
-            border: 1px solid rgba(204, 204, 204, 0.08);
-        }
-        .input-bg:focus {
-            border-color: rgba(204, 204, 204, 0.15);
-            outline: none;
         }
         .accent-green {
             color: rgba(0, 140, 69, 0.15);
@@ -144,18 +171,9 @@
                 opacity: 0.1;
             }
         }
-        .nav-bg {
-            background-color: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .mobile-menu {
-            background-color: rgba(0, 0, 0, 0.98);
-            backdrop-filter: blur(10px);
-        }
-        .footer-bg {
-            background-color: #000000;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
     <!-- Mobile Menu JavaScript -->
