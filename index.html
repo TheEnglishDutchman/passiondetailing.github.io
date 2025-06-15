@@ -93,7 +93,7 @@
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-16">
                 <!-- Left Navigation -->
-                <div class="flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="#story" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide">STORY</a>
                     <a href="#services" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide">SERVICES</a>
                 </div>
@@ -106,9 +106,26 @@
                 </div>
 
                 <!-- Right Navigation -->
-                <div class="flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="#gallery" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide">GALLERY</a>
                     <a href="#contact" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide">CONTACT</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300" id="mobileMenuButton">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-[#000000]/95 backdrop-blur-lg border-t border-[#F2F2F2]/10" id="mobileMenu">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#story" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide py-2">STORY</a>
+                    <a href="#services" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide py-2">SERVICES</a>
+                    <a href="#gallery" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide py-2">GALLERY</a>
+                    <a href="#contact" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide py-2">CONTACT</a>
                 </div>
             </div>
         </div>
@@ -118,7 +135,7 @@
     <section class="min-h-screen flex items-center justify-center bg-[#000000] pt-16 relative overflow-hidden">
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-5">
-            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
         </div>
 
         <div class="container mx-auto px-4 relative z-10">
@@ -421,5 +438,23 @@
     <a href="#contact" class="fixed bottom-8 right-8 bg-[#F2F2F2] text-[#000000] px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-[#000000] hover:text-[#F2F2F2] transition duration-300 z-50">
         Book Now
     </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html> 
