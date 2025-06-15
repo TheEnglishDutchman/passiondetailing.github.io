@@ -10,7 +10,7 @@
     <meta property="og:description" content="Interior & exterior detailing for cars and bikes. Mobile, reliable, and professional service.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/preview.jpg">
-    <title>Passion Detailing - Italian Excellence in Automotive Care</title>
+    <title>Passion Detailing - Premium Automotive Care</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -60,6 +60,13 @@
         .animate-fade-in {
             animation: fadeIn 0.6s ease-out forwards;
         }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
     </style>
     <!-- Mobile Menu JavaScript -->
     <script>
@@ -94,8 +101,8 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Left Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#story" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide">STORY</a>
                     <a href="#services" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide">SERVICES</a>
+                    <a href="#gallery" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide">GALLERY</a>
                 </div>
 
                 <!-- Centered Logo -->
@@ -107,7 +114,7 @@
 
                 <!-- Right Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#gallery" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide">GALLERY</a>
+                    <a href="#pricing" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide">PRICING</a>
                     <a href="#contact" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide">CONTACT</a>
                 </div>
 
@@ -122,9 +129,9 @@
         <div class="md:hidden hidden bg-[#000000]/95 backdrop-blur-lg border-t border-[#F2F2F2]/10" id="mobileMenu">
             <div class="container mx-auto px-4 py-4">
                 <div class="flex flex-col space-y-4">
-                    <a href="#story" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide py-2">STORY</a>
                     <a href="#services" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide py-2">SERVICES</a>
                     <a href="#gallery" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide py-2">GALLERY</a>
+                    <a href="#pricing" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide py-2">PRICING</a>
                     <a href="#contact" class="text-[#F2F2F2]/80 hover:text-[#F2F2F2] transition-colors duration-300 text-sm font-medium tracking-wide py-2">CONTACT</a>
                 </div>
             </div>
@@ -144,85 +151,19 @@
                     <img src="logo.png" alt="Passion Detailing Logo" class="w-40 h-40 mx-auto hover-lift">
                 </div>
                 <h1 class="text-5xl md:text-6xl font-light text-[#F2F2F2] mb-6 tracking-tight animate-fade-in" style="animation-delay: 0.4s;">
-                    Italian Excellence in<br>
-                    <span class="gradient-text">Automotive Detailing</span>
+                    Premium Automotive<br>
+                    <span class="gradient-text">Detailing Services</span>
                 </h1>
                 <p class="text-xl text-[#F2F2F2]/60 mb-12 font-light tracking-wide animate-fade-in" style="animation-delay: 0.6s;">
-                    Where Passion Meets Precision
+                    Experience the difference of professional detailing
                 </p>
                 <div class="flex justify-center space-x-6 animate-fade-in" style="animation-delay: 0.8s;">
                     <a href="#services" class="bg-[#F2F2F2] text-[#000000] px-8 py-3 rounded-full text-sm font-medium tracking-wide hover:bg-[#F2F2F2]/90 transition-all duration-300 hover-lift">
                         Our Services
                     </a>
-                    <a href="#story" class="border border-[#F2F2F2]/20 text-[#F2F2F2] px-8 py-3 rounded-full text-sm font-medium tracking-wide hover:border-[#F2F2F2]/40 hover:bg-[#F2F2F2]/5 transition-all duration-300 hover-lift">
-                        My Story
+                    <a href="#contact" class="border border-[#F2F2F2]/20 text-[#F2F2F2] px-8 py-3 rounded-full text-sm font-medium tracking-wide hover:border-[#F2F2F2]/40 hover:bg-[#F2F2F2]/5 transition-all duration-300 hover-lift">
+                        Book Now
                     </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Story Section -->
-    <section id="story" class="py-24 bg-[#000000]">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl font-light text-[#F2F2F2] mb-16 text-center tracking-tight">
-                    My Journey
-                </h2>
-                
-                <div class="space-y-12">
-                    <!-- Main Story -->
-                    <div class="bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
-                        <div class="flex items-center mb-6">
-                            <div class="bg-[#F2F2F2]/5 p-4 rounded-2xl mr-6">
-                                <i class="fas fa-flag-italy text-3xl text-[#F2F2F2]"></i>
-                            </div>
-                            <h3 class="text-2xl font-light text-[#F2F2F2] tracking-tight">From Italy to Excellence</h3>
-                        </div>
-                        <p class="text-[#F2F2F2]/70 leading-relaxed text-lg font-light">
-                            Born and raised in Italy, I developed a deep appreciation for automotive craftsmanship from an early age. My passion for detailing began when I first witnessed the transformative power of proper car care on my father's classic Alfa Romeo. This early experience ignited a lifelong dedication to the art of automotive detailing.
-                        </p>
-                    </div>
-
-                    <!-- Expertise -->
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
-                            <div class="flex items-center mb-6">
-                                <div class="bg-[#F2F2F2]/5 p-4 rounded-2xl mr-6">
-                                    <i class="fas fa-tools text-2xl text-[#F2F2F2]"></i>
-                                </div>
-                                <h3 class="text-xl font-light text-[#F2F2F2] tracking-tight">The Art of Detailing</h3>
-                            </div>
-                            <p class="text-[#F2F2F2]/70 leading-relaxed font-light">
-                                I've mastered the delicate balance between traditional Italian detailing techniques and modern innovations. Each vehicle receives meticulous attention to detail, preserving its character while enhancing its natural beauty.
-                            </p>
-                        </div>
-
-                        <div class="bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
-                            <div class="flex items-center mb-6">
-                                <div class="bg-[#F2F2F2]/5 p-4 rounded-2xl mr-6">
-                                    <i class="fas fa-heart text-2xl text-[#F2F2F2]"></i>
-                                </div>
-                                <h3 class="text-xl font-light text-[#F2F2F2] tracking-tight">My Philosophy</h3>
-                            </div>
-                            <p class="text-[#F2F2F2]/70 leading-relaxed font-light">
-                                I believe every vehicle has a soul that deserves to be preserved and enhanced. Whether it's a daily driver or a classic beauty, I treat each car with the respect and care it deserves.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Commitment -->
-                    <div class="bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
-                        <div class="flex items-center mb-6">
-                            <div class="bg-[#F2F2F2]/5 p-4 rounded-2xl mr-6">
-                                <i class="fas fa-star text-3xl text-[#F2F2F2]"></i>
-                            </div>
-                            <h3 class="text-2xl font-light text-[#F2F2F2] tracking-tight">Our Commitment</h3>
-                        </div>
-                        <p class="text-[#F2F2F2]/70 leading-relaxed text-lg font-light">
-                            We are committed to providing the highest quality detailing services, using only premium products and techniques that have been perfected through years of experience. Your vehicle deserves nothing but the best, and we take pride in delivering exceptional results that exceed expectations.
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -233,47 +174,171 @@
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-3xl font-light text-[#F2F2F2] mb-16 text-center tracking-tight">
-                    Our Services
+                    Premium Services
                 </h2>
                 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Service 1 -->
-                    <div class="bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
+                    <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500">
                         <div class="flex items-center mb-6">
                             <div class="bg-[#F2F2F2]/5 p-4 rounded-2xl mr-6">
                                 <i class="fas fa-car text-2xl text-[#F2F2F2]"></i>
                             </div>
                             <h3 class="text-xl font-light text-[#F2F2F2] tracking-tight">Exterior Detailing</h3>
                         </div>
-                        <p class="text-[#F2F2F2]/70 leading-relaxed font-light">
+                        <p class="text-[#F2F2F2]/70 leading-relaxed font-light mb-6">
                             Comprehensive exterior cleaning, paint correction, and protection services to restore and maintain your vehicle's showroom finish.
                         </p>
+                        <ul class="space-y-2 text-[#F2F2F2]/70 font-light">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Paint Correction
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Ceramic Coating
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Wheel Detailing
+                            </li>
+                        </ul>
                     </div>
 
                     <!-- Service 2 -->
-                    <div class="bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
+                    <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500">
                         <div class="flex items-center mb-6">
                             <div class="bg-[#F2F2F2]/5 p-4 rounded-2xl mr-6">
                                 <i class="fas fa-couch text-2xl text-[#F2F2F2]"></i>
                             </div>
                             <h3 class="text-xl font-light text-[#F2F2F2] tracking-tight">Interior Detailing</h3>
                         </div>
-                        <p class="text-[#F2F2F2]/70 leading-relaxed font-light">
+                        <p class="text-[#F2F2F2]/70 leading-relaxed font-light mb-6">
                             Deep cleaning and sanitization of all interior surfaces, including leather care, carpet cleaning, and odor elimination.
                         </p>
+                        <ul class="space-y-2 text-[#F2F2F2]/70 font-light">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Leather Treatment
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Carpet Shampooing
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Odor Removal
+                            </li>
+                        </ul>
                     </div>
 
                     <!-- Service 3 -->
-                    <div class="bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
+                    <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500">
                         <div class="flex items-center mb-6">
                             <div class="bg-[#F2F2F2]/5 p-4 rounded-2xl mr-6">
                                 <i class="fas fa-shield-alt text-2xl text-[#F2F2F2]"></i>
                             </div>
                             <h3 class="text-xl font-light text-[#F2F2F2] tracking-tight">Paint Protection</h3>
                         </div>
-                        <p class="text-[#F2F2F2]/70 leading-relaxed font-light">
+                        <p class="text-[#F2F2F2]/70 leading-relaxed font-light mb-6">
                             Premium ceramic coatings and paint protection films to shield your vehicle's finish from environmental damage.
                         </p>
+                        <ul class="space-y-2 text-[#F2F2F2]/70 font-light">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Ceramic Coating
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Paint Protection Film
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Long-term Protection
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-[#000000]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-light text-[#F2F2F2] mb-16 text-center tracking-tight">
+                    Service Packages
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Basic Package -->
+                    <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500">
+                        <h3 class="text-2xl font-light text-[#F2F2F2] mb-4 tracking-tight">Basic</h3>
+                        <p class="text-3xl font-light text-[#F2F2F2] mb-6">$149</p>
+                        <ul class="space-y-4 text-[#F2F2F2]/70 font-light mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Exterior Wash
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Interior Vacuum
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Window Cleaning
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center border border-[#F2F2F2]/20 text-[#F2F2F2] px-6 py-3 rounded-full text-sm font-medium tracking-wide hover:border-[#F2F2F2]/40 hover:bg-[#F2F2F2]/5 transition-all duration-300">
+                            Book Now
+                        </a>
+                    </div>
+
+                    <!-- Premium Package -->
+                    <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500">
+                        <h3 class="text-2xl font-light text-[#F2F2F2] mb-4 tracking-tight">Premium</h3>
+                        <p class="text-3xl font-light text-[#F2F2F2] mb-6">$299</p>
+                        <ul class="space-y-4 text-[#F2F2F2]/70 font-light mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Everything in Basic
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Paint Correction
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Ceramic Coating
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center bg-[#F2F2F2] text-[#000000] px-6 py-3 rounded-full text-sm font-medium tracking-wide hover:bg-[#F2F2F2]/90 transition-all duration-300">
+                            Book Now
+                        </a>
+                    </div>
+
+                    <!-- Ultimate Package -->
+                    <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500">
+                        <h3 class="text-2xl font-light text-[#F2F2F2] mb-4 tracking-tight">Ultimate</h3>
+                        <p class="text-3xl font-light text-[#F2F2F2] mb-6">$499</p>
+                        <ul class="space-y-4 text-[#F2F2F2]/70 font-light mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Everything in Premium
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Paint Protection Film
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-[#F2F2F2]/50 mr-2"></i>
+                                Lifetime Warranty
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center border border-[#F2F2F2]/20 text-[#F2F2F2] px-6 py-3 rounded-full text-sm font-medium tracking-wide hover:border-[#F2F2F2]/40 hover:bg-[#F2F2F2]/5 transition-all duration-300">
+                            Book Now
+                        </a>
                     </div>
                 </div>
             </div>
@@ -290,70 +355,21 @@
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Gallery items will be added here -->
-                    <div class="bg-[#000000] border border-[#F2F2F2]/10 rounded-3xl overflow-hidden hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
+                    <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 rounded-3xl overflow-hidden hover:border-[#F2F2F2]/20 transition-all duration-500">
                         <div class="aspect-w-16 aspect-h-9 bg-[#F2F2F2]/5">
                             <!-- Image placeholder -->
                         </div>
                     </div>
-                    <div class="bg-[#000000] border border-[#F2F2F2]/10 rounded-3xl overflow-hidden hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
+                    <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 rounded-3xl overflow-hidden hover:border-[#F2F2F2]/20 transition-all duration-500">
                         <div class="aspect-w-16 aspect-h-9 bg-[#F2F2F2]/5">
                             <!-- Image placeholder -->
                         </div>
                     </div>
-                    <div class="bg-[#000000] border border-[#F2F2F2]/10 rounded-3xl overflow-hidden hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
+                    <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 rounded-3xl overflow-hidden hover:border-[#F2F2F2]/20 transition-all duration-500">
                         <div class="aspect-w-16 aspect-h-9 bg-[#F2F2F2]/5">
                             <!-- Image placeholder -->
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-[#F2F2F2]">
-        <div class="container">
-            <h2 class="section-title text-center text-[#000000]">Our Commitment</h2>
-            <p class="text-center text-lg text-[#000000] mb-12 max-w-3xl mx-auto">We are dedicated to providing exceptional service and maintaining the highest standards of quality in automotive detailing.</p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-16 h-16 bg-[#000000] rounded-full flex items-center justify-center">
-                            <i class="fas fa-medal text-[#F2F2F2] text-2xl"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-[#000000]">Quality Assurance</h4>
-                            <p class="text-sm text-[#000000]">Premium Results</p>
-                        </div>
-                    </div>
-                    <p class="text-[#000000]">Every vehicle receives our meticulous attention to detail, ensuring the highest quality finish.</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-16 h-16 bg-[#000000] rounded-full flex items-center justify-center">
-                            <i class="fas fa-tools text-[#F2F2F2] text-2xl"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-[#000000]">Expert Craftsmanship</h4>
-                            <p class="text-sm text-[#000000]">Professional Service</p>
-                        </div>
-                    </div>
-                    <p class="text-[#000000]">Combining traditional techniques with modern technology for exceptional results.</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-16 h-16 bg-[#000000] rounded-full flex items-center justify-center">
-                            <i class="fas fa-heart text-[#F2F2F2] text-2xl"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-[#000000]">Customer Focus</h4>
-                            <p class="text-sm text-[#000000]">Your Satisfaction</p>
-                        </div>
-                    </div>
-                    <p class="text-[#000000]">Dedicated to exceeding expectations and ensuring complete customer satisfaction.</p>
                 </div>
             </div>
         </div>
@@ -369,7 +385,7 @@
                 
                 <div class="grid md:grid-cols-2 gap-12">
                     <!-- Contact Form -->
-                    <div class="bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
+                    <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500">
                         <form class="space-y-6">
                             <div>
                                 <label for="name" class="block text-[#F2F2F2]/80 font-medium text-sm tracking-wide mb-2">Name</label>
@@ -391,7 +407,7 @@
 
                     <!-- Contact Info -->
                     <div class="space-y-8">
-                        <div class="bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
+                        <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500">
                             <div class="flex items-center mb-6">
                                 <div class="bg-[#F2F2F2]/5 p-4 rounded-2xl mr-6">
                                     <i class="fas fa-map-marker-alt text-2xl text-[#F2F2F2]"></i>
@@ -403,7 +419,7 @@
                             </p>
                         </div>
 
-                        <div class="bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500 hover-lift">
+                        <div class="service-card bg-[#000000] border border-[#F2F2F2]/10 p-10 rounded-3xl hover:border-[#F2F2F2]/20 transition-all duration-500">
                             <div class="flex items-center mb-6">
                                 <div class="bg-[#F2F2F2]/5 p-4 rounded-2xl mr-6">
                                     <i class="fas fa-phone text-2xl text-[#F2F2F2]"></i>
