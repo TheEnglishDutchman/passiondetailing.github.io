@@ -176,17 +176,33 @@
 </head>
 <body class="text-[#BBBBBB]">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-effect">
+    <nav class="fixed w-full z-50 nav-bg">
         <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <a href="#" class="text-2xl font-bold text-[#CCCCCC] hover:text-[#BBBBBB] transition-colors">
-                    PASSION DETAILING
-                </a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#services" class="text-[#BBBBBB] hover:text-[#CCCCCC] transition-colors">SERVICES</a>
-                    <a href="#pricing" class="text-[#BBBBBB] hover:text-[#CCCCCC] transition-colors">PRICING</a>
-                    <a href="#gallery" class="text-[#BBBBBB] hover:text-[#CCCCCC] transition-colors">GALLERY</a>
-                    <a href="#contact" class="text-[#BBBBBB] hover:text-[#CCCCCC] transition-colors">CONTACT</a>
+            <div class="flex items-center justify-between h-14">
+                <!-- Left Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#services" class="text-gray-300 hover:text-white transition-colors">SERVICES</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-white transition-colors">GALLERY</a>
+                </div>
+                
+                <!-- Center Logo -->
+                <div class="flex-1 text-center">
+                    <a href="#" class="text-2xl font-bold text-white hover:text-red-600 transition-colors">PassionDetailing</a>
+                </div>
+                
+                <!-- Right Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">PRICING</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors">CONTACT</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuButton" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
