@@ -18,11 +18,12 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#FF4D4D',
-                        secondary: '#2D2D2D',
-                        accent: '#FFD700',
-                        dark: '#1A1A1A',
-                        light: '#F5F5F5'
+                        primary: '#000000',    // Black
+                        secondary: '#1C1C1E',  // Dark Grey
+                        accent: '#3A3A3C',     // Grey
+                        light: '#D1D1D6',      // Light Grey
+                        white: '#FFFFFF',      // White
+                        offwhite: '#F2F2F7',   // Off-White
                     },
                     fontFamily: {
                         'made-tommy': ['"Made Tommy Soft"', 'sans-serif'],
@@ -50,13 +51,13 @@
             box-sizing: border-box;
         }
         body {
-            background-color: #1A1A1A;
-            color: #F5F5F5;
+            background-color: #FFFFFF;
+            color: #000000;
             line-height: 1.6;
         }
         .hero-section {
             min-height: 100vh;
-            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('images/hero-bg.jpg');
+            background: linear-gradient(rgba(28, 28, 30, 0.9), rgba(28, 28, 30, 0.9)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -70,60 +71,50 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, rgba(255, 77, 77, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
         .nav-bg {
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(28, 28, 30, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(58, 58, 60, 0.2);
         }
         .card {
-            background: rgba(45, 45, 45, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #F2F2F7;
+            border: 1px solid #D1D1D6;
             transition: all 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
-            border-color: rgba(255, 77, 77, 0.3);
-            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.1);
+            border-color: #3A3A3C;
+            box-shadow: 0 10px 30px rgba(58, 58, 60, 0.1);
         }
         .btn-primary {
-            background: linear-gradient(135deg, #FF4D4D 0%, #FF6B6B 100%);
+            background: #000000;
+            color: #FFFFFF;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-        .btn-primary:hover::before {
-            left: 100%;
-        }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background: #1C1C1E;
         }
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
+            background: #3A3A3C;
+            color: #FFFFFF;
             transition: all 0.3s ease;
         }
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: #1C1C1E;
             transform: translateY(-2px);
         }
         .service-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, rgba(255, 77, 77, 0.1) 0%, rgba(255, 77, 77, 0.2) 100%);
+            background: #F2F2F7;
+            border: 1px solid #D1D1D6;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -132,18 +123,20 @@
         }
         .service-icon i {
             font-size: 2rem;
-            color: #FF4D4D;
+            color: #000000;
             transition: all 0.3s ease;
         }
         .card:hover .service-icon {
             transform: scale(1.1) rotate(5deg);
-            background: linear-gradient(135deg, rgba(255, 77, 77, 0.2) 0%, rgba(255, 77, 77, 0.3) 100%);
+            background: #FFFFFF;
+            border-color: #3A3A3C;
         }
         .gallery-item {
             position: relative;
             overflow: hidden;
             border-radius: 15px;
             aspect-ratio: 16/9;
+            border: 1px solid #D1D1D6;
         }
         .gallery-item img {
             width: 100%;
@@ -161,7 +154,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to top, rgba(26, 26, 26, 0.8), transparent);
+            background: linear-gradient(to top, rgba(28, 28, 30, 0.8), transparent);
             opacity: 0;
             transition: all 0.3s ease;
         }
@@ -180,7 +173,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #FF4D4D, #FFD700);
+            background: #000000;
             opacity: 0;
             transition: all 0.3s ease;
         }
@@ -188,7 +181,7 @@
             opacity: 1;
         }
         .price-card.popular {
-            border: 2px solid #FF4D4D;
+            border: 2px solid #000000;
             transform: scale(1.05);
         }
         .price-card.popular::before {
@@ -206,36 +199,40 @@
         .contact-info-item i {
             width: 50px;
             height: 50px;
-            background: rgba(255, 77, 77, 0.1);
+            background: #F2F2F7;
+            border: 1px solid #D1D1D6;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            color: #FF4D4D;
+            color: #000000;
             transition: all 0.3s ease;
         }
         .contact-info-item:hover i {
-            background: rgba(255, 77, 77, 0.2);
+            background: #FFFFFF;
+            border-color: #3A3A3C;
             transform: rotate(10deg);
         }
         .input-field {
-            background: rgba(45, 45, 45, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #F2F2F7;
+            border: 1px solid #D1D1D6;
             transition: all 0.3s ease;
             padding: 1rem;
             border-radius: 12px;
+            color: #000000;
         }
         .input-field:focus {
-            border-color: #FF4D4D;
-            box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.2);
-            background: rgba(45, 45, 45, 0.7);
+            border-color: #3A3A3C;
+            box-shadow: 0 0 0 2px rgba(58, 58, 60, 0.2);
+            background: #FFFFFF;
             outline: none;
         }
         .section-title {
             position: relative;
             display: inline-block;
             margin-bottom: 3rem;
+            color: #000000;
         }
         .section-title::after {
             content: '';
@@ -244,7 +241,7 @@
             left: 0;
             width: 60px;
             height: 4px;
-            background: linear-gradient(90deg, #FF4D4D, #FFD700);
+            background: #000000;
             border-radius: 2px;
         }
         .animate-fade-in {
