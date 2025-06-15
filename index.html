@@ -152,43 +152,45 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#000000] border-b border-[#F2F2F2]/20">
-        <div class="container mx-auto px-4">
+    <nav class="fixed w-full z-50 bg-[#000000] border-b border-[#F2F2F2]/10">
+        <div class="container">
             <div class="flex items-center justify-between h-20">
-                <!-- Navigation Links (Left) -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#story" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition duration-300">My Story</a>
-                    <a href="#services" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition duration-300">Services</a>
+                <!-- Left Navigation -->
+                <div class="flex items-center space-x-8">
+                    <a href="#story" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition-colors duration-300 font-light">My Story</a>
+                    <a href="#services" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition-colors duration-300 font-light">Services</a>
                 </div>
-                
-                <!-- Logo/Brand (Center) -->
+
+                <!-- Centered Logo -->
                 <div class="absolute left-1/2 transform -translate-x-1/2">
-                    <a href="#" class="text-[#F2F2F2] text-2xl font-bold tracking-wider">PassionDetailing</a>
+                    <a href="#" class="text-[#F2F2F2] text-xl tracking-wider font-light border border-[#F2F2F2] px-4 py-1 rounded-lg hover:border-[#F2F2F2]/80 transition-all duration-300">
+                        PassionDetailing
+                    </a>
                 </div>
-                
-                <!-- Navigation Links (Right) -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#gallery" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition duration-300">Gallery</a>
-                    <a href="#contact" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition duration-300">Contact</a>
+
+                <!-- Right Navigation -->
+                <div class="flex items-center space-x-8">
+                    <a href="#gallery" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition-colors duration-300 font-light">Gallery</a>
+                    <a href="#contact" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition-colors duration-300 font-light">Contact</a>
                 </div>
-                
+
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobileMenuBtn" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition duration-300">
-                        <i class="fas fa-bars text-2xl"></i>
+                    <button id="mobileMenuButton" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition-colors duration-300">
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="md:hidden hidden bg-[#000000] border-t border-[#F2F2F2]/20">
-            <div class="container mx-auto px-4 py-4">
+        <div id="mobileMenu" class="md:hidden hidden bg-[#000000] border-t border-[#F2F2F2]/10">
+            <div class="container py-4">
                 <div class="flex flex-col space-y-4">
-                    <a href="#story" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition duration-300">My Story</a>
-                    <a href="#services" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition duration-300">Services</a>
-                    <a href="#gallery" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition duration-300">Gallery</a>
-                    <a href="#contact" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition duration-300">Contact</a>
+                    <a href="#story" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition-colors duration-300 font-light">My Story</a>
+                    <a href="#services" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition-colors duration-300 font-light">Services</a>
+                    <a href="#gallery" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition-colors duration-300 font-light">Gallery</a>
+                    <a href="#contact" class="text-[#F2F2F2] hover:text-[#F2F2F2]/80 transition-colors duration-300 font-light">Contact</a>
                 </div>
             </div>
         </div>
