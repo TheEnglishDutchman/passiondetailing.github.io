@@ -40,6 +40,14 @@
             background-color: transparent;
             color: #F2F2F2;
         }
+        .hero-section {
+            min-height: 100vh;
+            background-image: url('images/background image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
         .gradient-text {
             background: linear-gradient(135deg, #F2F2F2 0%, #F2F2F2 100%);
             -webkit-background-clip: text;
@@ -153,10 +161,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute inset-0 z-0" style="min-height: 100vh;">
-            <img src="./images/background image.jpg" alt="Background" class="w-full h-full object-cover" style="min-height: 100vh;">
-        </div>
+    <section class="hero-section flex items-center justify-center">
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
                 <div class="mb-8 animate-fade-in" style="animation-delay: 0.2s;">
